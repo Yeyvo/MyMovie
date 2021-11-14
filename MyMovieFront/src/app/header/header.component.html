@@ -1,0 +1,72 @@
+<nav>
+  <div class="menu-icon">
+    <span [ngClass]="{
+    'hide':menuBtnHide
+    }" (click)="onClickMenuBtn()"><fa-icon [icon]="faBars"></fa-icon></span>
+  </div>
+  <div class="logo">
+    MyMovie
+  </div>
+  <div class="nav-items" [ngClass]="{
+    'active':itemsActive
+    }">
+    <li><a href="#" (click)="onClickItem()">Movies</a></li>
+    <li *ngIf="!isAuth" class="nav-item" routerLinkActive="active">
+      <a class="nav-link" (click)="onClickItem()" routerLink="auth/signup">Sign Up</a>
+    </li>
+    <li *ngIf="!isAuth" class="nav-item" routerLinkActive="active">
+      <a class="nav-link" (click)="onClickItem()" routerLink="auth/signup">Log In</a>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a routerLink="contact" (click)="onClickItem()">Contact</a>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a routerLink="feedback" (click)="onClickItem()">Feedback</a>
+    </li>
+
+  </div>
+  <div class="search-icon" [ngClass]="{
+    'hide':searchBtnHide
+    }" (click)="onClickSearchBtn()">
+    <fa-icon [icon]="faSearch"></fa-icon>
+  </div>
+  <div class="cancel-icon" [ngClass]="{
+    'show':cancelBtnShow,
+    'colorCancelClick': cancelBtnShow
+    }" (click)="onClickCancelBtn()">
+    <fa-icon [icon]="faTimes"></fa-icon>
+  </div>
+
+  <form action="#" [ngClass]="{
+    'active':formActive
+    }">
+    <input type="search" class="search-data" placeholder="Search" required>
+    <button type="submit">
+      <fa-icon [icon]="faSearch"></fa-icon>
+    </button>
+  </form>
+  <div *ngIf="isAuth" id="profile" class="">
+
+    <a class="" (click)="this.profileActive = !this.profileActive">
+      <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="40"
+           height="40" class="rounded-circle">
+    </a>
+
+
+    <div id="dropdownProfile" [ngClass]="{
+    'active':profileActive
+    }">
+      <ul>
+        <li>
+          <a class="dropdownProfile-item" routerLink="auth/profile" (click)="onClickItemProfile()">Profile</a>
+        </li>
+        <li routerLinkActive="active">
+          <a class="dropdownProfile-item" routerLink="" (click)="onSignOUt(); onClickItemProfile()">Log Out</a>
+        </li>
+      </ul>
+    </div>
+
+
+  </div>
+</nav>
+

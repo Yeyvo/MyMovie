@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'MyMovieFront';
+  model = {
+    left: true,
+    middle: false,
+    right: false
+  };
 }

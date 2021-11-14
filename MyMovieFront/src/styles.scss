@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+:root {
+  //color palette
+  --PalletteMaximumRed: #CF291D;
+  --PalletteBrightGray: #474747;
+  --PalletteArgent: #BFBFBF;
+  --PalletteEerieBlack: #1D1D1D;
+  --PalletteCadmiumPurple: #B50717;
+  --PalletteChineseBlack: #131313;
+
+
+  --paletteWhite: #fff;
+  --paletteBlackBlue : #171c24;
+  --paletteRed : #ff3d00;
+  --paletteCarbone: #1e232b;
+}
+
+body {
+  background: var(--PalletteBrightGray);
+}
+
+p {
+  color: var(--PalletteArgent);
+}
