@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.12.
 
-please once you doanload the project navigate to the project folder and run `npm build` to doanload all the dependencies.
+please once you doanload the project navigate to the project folder and run `npm install` to doanload all the dependencies.
 
 ## Development server
 
