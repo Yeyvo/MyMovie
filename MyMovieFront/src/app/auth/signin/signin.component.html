@@ -1,1 +1,49 @@
-<p>signin works!</p>
+<div class="center-form">
+
+  <div class="col-sm-8 col-sm-offset-2 card-form">
+    <h2>Login : </h2>
+    <form [formGroup]="signInForm" (ngSubmit)="onConnect()">
+      <div class="form-group">
+        <label for="email">Email : </label>
+        <input type="email" id="email" class="form-control" formControlName="email">
+      </div>
+      <div class="form-group">
+        <label for="password">Password :</label>
+        <input type="password" id="password" class="form-control" formControlName="password">
+      </div>
+      <p class="text-danger">{{errorMessage}}
+        <button class="btn btn-primary" type="submit" [disabled]="signInForm.invalid">Connect</button>
+    </form>
+
+      <p> or Connect using </p>
+      <button (click)="auth.googleSignIn()">
+        <fa-icon [icon]="faGoogle"></fa-icon>
+      </button>
+  </div>
+</div>
+
+
+
+<!--<div *ngIf="auth.user$ | async; then authenticated else guest">-->
+<!--  &lt;!&ndash; template will replace this div &ndash;&gt;-->
+<!--</div>-->
+
+<!--&lt;!&ndash; User NOT logged in &ndash;&gt;-->
+<!--<ng-template #guest>-->
+<!--  <h3>Howdy, GUEST</h3>-->
+<!--  <p>Login to get started...</p>-->
+
+
+
+<!--</ng-template>-->
+
+
+<!--&lt;!&ndash; User logged in &ndash;&gt;-->
+<!--<ng-template #authenticated>-->
+<!--  <div *ngIf="auth.user$ | async as user">-->
+<!--    <h3>Howdy, {{ user.displayName }}</h3>-->
+<!--    <img  [src]="user.photoURL">-->
+<!--    <p>UID: {{ user.uid }}</p>-->
+<!--    <button (click)="auth.signOut()">Logout</button>-->
+<!--  </div>-->
+<!--</ng-template>-->

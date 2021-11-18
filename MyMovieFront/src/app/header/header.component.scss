@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
-
+@import "../../styles.scss";
 
 nav {
+
+  a,p, h1,h2,h3, .logo{
+    user-select: none;
+
+  }
+
   background: var(--paletteBlackBlue);
   display: flex;
   flex-wrap: wrap;
@@ -65,7 +71,8 @@ nav {
       font-weight: 500;
       background: none;
     }
-    .search-data:focus{
+
+    .search-data:focus {
       outline: none;
     }
 
@@ -100,14 +107,18 @@ nav {
         list-style-type: none;
         text-align: center;
       }
-      a{
+
+
+      a {
         text-decoration: none;
         font-weight: 500;
-        color : var(--paletteWhite)
+        color: var(--paletteWhite);
       }
-      a:hover{
+
+      a:hover {
         color: var(--paletteRed);
       }
+
     }
 
 
@@ -130,6 +141,17 @@ nav {
       left: 70%;
       top: 40%;
       transform: translate(-50%, -50%);
+    }
+
+    .profileWrapper {
+      display: flex;
+      flex-direction: row;
+
+      p{
+        margin-top: 10px;
+        margin-right: 10px;
+        font-weight: bold;
+      }
     }
 
   }
@@ -276,6 +298,11 @@ nav .logo.space {
   }
   #profile {
     margin-right: 10px;
+    .profileWrapper{
+      p{
+        display: none;
+      }
+    }
   }
 }
 

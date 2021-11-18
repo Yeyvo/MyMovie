@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "my-movie-pi": {
+      "hosting": {
+        "MyMovieFront": [
+          "my-movie-pi"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "my-movie-pi"
+  }
+}

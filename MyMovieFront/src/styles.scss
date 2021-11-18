@@ -14,8 +14,8 @@
 
 
   --paletteWhite: #fff;
-  --paletteBlackBlue : #171c24;
-  --paletteRed : #ff3d00;
+  --paletteBlackBlue: #171c24;
+  --paletteRed: #ff3d00;
   --paletteCarbone: #1e232b;
 }
 
@@ -23,6 +23,50 @@ body {
   background: var(--PalletteBrightGray);
 }
 
-p {
-  color: var(--PalletteArgent);
+p, a, h1, h2, h3, h4, label {
+  //  color: var(--PalletteArgent);
+  color: var(--paletteWhite);
+}
+
+.center {
+  min-height: 100%; /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  //width: 100%;
+}
+
+.center-form {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.card-form {
+  form {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    input{
+      //max-width: 70%;
+    }
+  }
+
+  margin-top: 25px;
+  //@extend .center-form;
+  //min-height: 90vh;
+  background-color: var(--paletteWhite);
+  border-radius: 10px;
+
+  p, label {
+    color: var(--PalletteCadmiumPurple);
+  }
+  h2{
+    color: var(--paletteCarbone);
+  }
 }

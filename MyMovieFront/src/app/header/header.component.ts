@@ -1,14 +1,17 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {faBars, faSearch, faTimes} from '@fortawesome/free-solid-svg-icons';
+import {AuthService} from "../services/auth.service";
+import {User} from "../models/User";
+import {Observable, Subscription} from "rxjs";
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
+
   isMenuCollapsed: boolean = true;
-  isAuth: boolean = true;
   itemsActive: boolean = false;
   menuBtnHide: boolean = false;
   searchBtnHide: boolean = false;
@@ -17,16 +20,33 @@ export class HeaderComponent implements OnInit {
   faSearch = faSearch;
   faTimes = faTimes;
   faBars = faBars;
-  profileActive :boolean = false;
+  profileActive: boolean = false;
 
-  constructor() {
+  isAuth: boolean;
+  authSubscription: Subscription;
+  user: User;
+  userSub : Subscription;
+
+
+  constructor(
+    public auth: AuthService
+  ) {
   }
 
   ngOnInit(): void {
+    // this.isAuth = this.auth.isAuth;
+    this.authSubscription = this.auth.authSubject.subscribe((newData) => {
+      this.isAuth = newData;
+    });
+
+    this.userSub = this.auth.user$.subscribe((newUser)=>{
+      this.user = newUser;
+    });
+
   }
 
   onSignOUt() {
-
+    this.auth.signOut();
   }
 
   onClickMenuBtn() {
@@ -35,6 +55,9 @@ export class HeaderComponent implements OnInit {
     this.menuBtnHide = true;
     this.searchBtnHide = true;
     this.cancelBtnShow = true;
+
+    this.formActive = false;
+    this.searchBtnHide = false;
   }
 
   onClickCancelBtn() {
@@ -46,6 +69,8 @@ export class HeaderComponent implements OnInit {
   }
 
   onClickSearchBtn() {
+    this.onClickCancelBtn();
+
     this.formActive = true;
     this.searchBtnHide = true;
     this.cancelBtnShow = true;
@@ -55,10 +80,16 @@ export class HeaderComponent implements OnInit {
   onClickItem() {
     this.onClickCancelBtn();
   }
+
   // onClickProfile(){
   //   this.profileActive = true;
   // }
-  onClickItemProfile(){
+  onClickItemProfile() {
     this.profileActive = false;
+  }
+
+  ngOnDestroy(): void {
+    this.authSubscription.unsubscribe();
+    this.userSub.unsubscribe();
   }
 }
