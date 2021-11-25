@@ -1,8 +1,7 @@
-import { Component } from '@angular/core';
-
-import {initializeApp} from "firebase/app";
-import {getAnalytics} from "firebase/analytics";
-import {getDatabase} from "firebase/database";
+import {Component} from '@angular/core';
+import { Router, NavigationStart, NavigationEnd } from '@angular/router';
+import {ThemePalette} from '@angular/material/core';
+import {ProgressSpinnerMode} from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-root',
@@ -10,18 +9,22 @@ import {getDatabase} from "firebase/database";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'MyMovieFront';
-  // model = {
-  //   left: true,
-  //   middle: false,
-  //   right: false
-  // };
-  constructor(){
+  title = 'MyMovie';
+  loading = false;
+  color: ThemePalette = 'warn';
+  mode: ProgressSpinnerMode = 'indeterminate';
+  value = 50;
 
 
-// // Initialize Firebase
-//     const app = initializeApp(firebaseConfig);
-//     const analytics = getAnalytics(app);
-//     const db = getDatabase(app);
+  constructor(private router: Router) {
+    router.events.subscribe(event => {
+      if (event instanceof NavigationStart) {
+        this.loading = true;
+      } else if (event instanceof NavigationEnd) {
+        setTimeout(() => {
+          this.loading = false;
+        }, 1000);
+      }
+    });
   }
 }

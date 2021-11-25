@@ -1,0 +1,81 @@
+<nav>
+  <div class="menu-icon">
+    <span [ngClass]="{
+    'hide':menuBtnHide
+    }" (click)="onClickMenuBtn()"><fa-icon [icon]="faBars"></fa-icon></span>
+  </div>
+  <div class="logo">
+    MyMovie
+  </div>
+  <div class="nav-items" [ngClass]="{
+    'active':itemsActive
+    }">
+    <li>
+      <a  (click)="onClickItem()" routerLink="movies">Movies</a>
+    </li>
+    <li *ngIf="!isAuth" class="nav-item" routerLinkActive="active">
+      <a class="nav-link" (click)="onClickItem()" routerLink="auth/signup">Register</a>
+      <!--   create an account  signup  -->
+    </li>
+
+    <li *ngIf="!isAuth" class="nav-item" routerLinkActive="active">
+      <a class="nav-link" (click)="onClickItem()" routerLink="auth/signing">Log In</a>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a routerLink="contact" (click)="onClickItem()">Contact</a>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a routerLink="feedback" (click)="onClickItem()">Feedback</a>
+    </li>
+    <li *ngIf="isAuth" class="nav-item" routerLinkActive="active">
+      <a class="nav-link" (click)="onClickItem(); onSignOUt()" routerLink="/">Sign out</a>
+    </li>
+  </div>
+  <div class="search-icon" [ngClass]="{
+    'hide':searchBtnHide
+    }" (click)="onClickSearchBtn()">
+    <fa-icon [icon]="faSearch"></fa-icon>
+  </div>
+  <div class="cancel-icon" [ngClass]="{
+    'show':cancelBtnShow,
+    'colorCancelClick': cancelBtnShow
+    }" (click)="onClickCancelBtn()">
+    <fa-icon [icon]="faTimes"></fa-icon>
+  </div>
+
+  <form [ngClass]="{
+    'active':formActive
+    }">
+    <input type="search" class="search-data" placeholder="Search" required [(ngModel)]="searchStr"
+           name="searchStr" (keyup.enter)="searchMovies()">
+    <button type="submit" (click)="searchMovies()">
+      <fa-icon [icon]="faSearch"></fa-icon>
+    </button>
+  </form>
+  <div *ngIf="isAuth" id="profile" class="">
+<!--    <div class="profileWrapper" (click)="this.profileActive = !this.profileActive">-->
+    <div class=" profileWrapper d-flex flex-row align-items-center" (click)="this.profileActive = !this.profileActive">
+      <p class="align-self-center" style="font-size: 100%">{{user.displayName | slice : 0: 10 }}</p>
+
+        <img [src]="user.photoURL" width="40" height="40" class="rounded-circle">
+
+<!--      </a>-->
+    </div>
+
+    <div id="dropdownProfile" [ngClass]="{
+    'active':profileActive
+    }">
+      <ul>
+        <li>
+          <a class="dropdownProfile-item" routerLink="auth/profile" (click)="onClickItemProfile()">Profile</a>
+        </li>
+        <li routerLinkActive="active">
+          <a class="dropdownProfile-item" routerLink="" (click)="onSignOUt(); onClickItemProfile()">Log Out</a>
+        </li>
+      </ul>
+    </div>
+
+
+  </div>
+</nav>
+

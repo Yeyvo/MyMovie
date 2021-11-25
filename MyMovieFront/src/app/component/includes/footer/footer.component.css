@@ -1,0 +1,25 @@
+.footer {
+  background-color: #212121;
+  padding: 1rem 0rem 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.footer p {
+  margin-bottom: 5px;
+  font-size: 15px;
+  line-height: 1;
+}
+.footer .list-inline li a {
+  width: 4rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer .list-inline li a svg {
+  transition: all 0.3s ease-in-out;
+}
+.footer .list-inline li a svg:hover {
+  fill: #fff;
+}
+
+/*# sourceMappingURL=footer.component.css.map */
