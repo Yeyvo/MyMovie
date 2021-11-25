@@ -5,6 +5,7 @@ import {User} from "../../../models/User";
 import {Observable, Subscription} from "rxjs";
 import {MoviesService} from "../../../services/movies.service";
 import {MoviesComponent} from "../../movies/movies.component";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -34,7 +35,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   constructor(
     public auth: AuthService,
-    private movieService : MoviesService
+    private movieService : MoviesService,
+    private router : Router
   ) {
   }
 
@@ -60,6 +62,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.menuBtnHide = true;
     this.searchBtnHide = true;
     this.cancelBtnShow = true;
+    this.profileActive = false;
 
     this.formActive = false;
     this.searchBtnHide = false;
@@ -71,6 +74,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.searchBtnHide = false;
     this.cancelBtnShow = false;
     this.formActive = false;
+    this.profileActive = false;
   }
 
   onClickSearchBtn() {
@@ -86,9 +90,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.onClickCancelBtn();
   }
 
-  // onClickProfile(){
-  //   this.profileActive = true;
-  // }
   onClickItemProfile() {
     this.profileActive = false;
   }
@@ -99,9 +100,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   searchMovies() {
-    // this.movieService.searchMovies(this.searchStr).subscribe(res => {
-    //   this.searchRes = res.results;
-    // });
     this.movieService.searchMovies(this.searchStr, 1);
+    this.router.navigate(['/movies']);
+  }
+
+  onLogo() {
+    this.onClickCancelBtn();
+    this.router.navigate(['/']);
   }
 }

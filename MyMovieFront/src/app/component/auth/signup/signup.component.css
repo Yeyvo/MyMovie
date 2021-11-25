@@ -1,0 +1,10 @@
+#registerForm form button {
+  background-color: var(--paletteRed);
+  margin-bottom: 20px;
+}
+#registerForm form button:hover {
+  background-color: var(--PalletteMaximumRed);
+  transition: 1s;
+}
+
+/*# sourceMappingURL=signup.component.css.map */

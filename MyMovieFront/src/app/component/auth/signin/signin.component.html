@@ -1,4 +1,4 @@
-<div class="center-form">
+<div class="center-form mainSee">
 
   <div class="col-sm-8 col-sm-offset-2 card-form">
     <h2>Login : </h2>
@@ -12,16 +12,18 @@
         <input type="password" id="password" class="form-control" formControlName="password">
       </div>
       <p class="text-danger">{{errorMessage}}
-        <button class="btn btn-primary" type="submit" [disabled]="signInForm.invalid">Connect</button>
+        <button class="btn" type="submit" [disabled]="signInForm.invalid">Connect</button>
     </form>
-
-      <p> or Connect using </p>
-      <button (click)="auth.googleSignIn()">
-        <fa-icon [icon]="faGoogle"></fa-icon>
-      </button>
+    <div class="connectUsingAll">
+      <p>Connect using</p>
+      <div class="connectUsing">
+        <button (click)="auth.googleSignIn()">
+          <fa-icon [icon]="faGoogle"></fa-icon>
+        </button>
+      </div>
+    </div>
   </div>
 </div>
-
 
 
 <!--<div *ngIf="auth.user$ | async; then authenticated else guest">-->
@@ -32,7 +34,6 @@
 <!--<ng-template #guest>-->
 <!--  <h3>Howdy, GUEST</h3>-->
 <!--  <p>Login to get started...</p>-->
-
 
 
 <!--</ng-template>-->

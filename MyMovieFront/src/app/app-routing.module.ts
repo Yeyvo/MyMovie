@@ -1,6 +1,10 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from "./component/home/home.component";
+import {SignupComponent} from "./component/auth/signup/signup.component";
+import {SigninComponent} from "./component/auth/signin/signin.component";
+import {ProfileComponent} from "./component/profile/profile.component";
+import {FourOhFourComponent} from "./component/four-oh-four/four-oh-four.component";
 
 const routes: Routes = [{
   path: '',
@@ -31,11 +35,24 @@ const routes: Routes = [{
     path: 'person/:id',
     loadChildren: () => import('./component/person/person.module').then(mod => mod.PersonModule)
   },
-
+  {
+    path: 'auth/signup', component: SignupComponent
+  },
+  {
+    path: 'auth/signin', component: SigninComponent
+  },
+  {
+    path: 'auth/profile', component: ProfileComponent
+  },
+  {
+    path: 'not-found', component: FourOhFourComponent
+  },
   {
     path: '**',
-    redirectTo: ''
-  }];
+    redirectTo: 'not-found'
+  },
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

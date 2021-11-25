@@ -1,0 +1,12 @@
+#registerForm{
+  form{
+    button{
+      background-color: var(--paletteRed);
+      &:hover{
+        background-color: var(--PalletteMaximumRed);
+        transition: 1s;
+      }
+      margin-bottom: 20px;
+    }
+  }
+}

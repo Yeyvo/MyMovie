@@ -42,7 +42,7 @@ export class SignupComponent implements OnInit {
     const email = this.signUpForm.get('email').value;
     const password = this.signUpForm.get('password').value;
     this.auth.createNewUserEmailPass(username, email, password).then(() => {
-      this.router.navigate(['/books']);
+      this.router.navigate(['/']);
     }).catch((err) => {
       this.errorMessage = err;
       console.log(err);

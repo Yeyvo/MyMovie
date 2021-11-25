@@ -1,4 +1,4 @@
-<div class="center-form">
+<div class="center-form mainSee">
   <div class="col-sm-8 col-sm-offset-2 card-form">
     <h2>Register :</h2>
     <form [formGroup]="signUpForm" (ngSubmit)="onSaveAccount()">
@@ -15,12 +15,10 @@
         <input type="password" id="password" class="form-control" formControlName="password">
       </div>
       <p class="text-danger">{{errorMessage}}</p>
-      <button class="btn btn-primary" type="submit" [disabled]="signUpForm.invalid"> CREATE USER</button>
+
+      <button class="btn" type="submit" [disabled]="signUpForm.invalid"> CREATE USER</button>
     </form>
-    <p> or Register using </p>
-    <button (click)="auth.googleSignIn()">
-      <fa-icon [icon]="faGoogle"></fa-icon>
-    </button>
+
   </div>
 </div>
 

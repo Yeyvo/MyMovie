@@ -64,6 +64,9 @@ $MyMovieFront-theme: mat.define-light-theme((
   --paletteBlackBlue: #171c24;
   --paletteRed: #ff3d00;
   --paletteCarbone: #1e232b;
+
+  --paletteDarkGray: #212121;
+  --paletteBackgroundBlack : #141414;
 }
 
 p, a, h1, h2, h3, h4, label {
@@ -89,6 +92,8 @@ p, a, h1, h2, h3, h4, label {
 }
 
 .card-form {
+
+  font-size: 1.1em;
   form {
 
     display: flex;
@@ -97,6 +102,16 @@ p, a, h1, h2, h3, h4, label {
 
     input {
       //max-width: 70%;
+      font-size: 100%;
+    }
+    button{
+      color: var(--paletteWhite);
+      background-color: var(--paletteRed);
+      border-color: var(--paletteRed);
+      &:hover{
+        background-color: var(--PalletteMaximumRed);
+        transition: 1s;
+      }
     }
   }
 
@@ -106,13 +121,35 @@ p, a, h1, h2, h3, h4, label {
   background-color: var(--paletteWhite);
   border-radius: 10px;
 
-  p, label {
+  label {
     color: var(--PalletteCadmiumPurple);
   }
 
-  h2 {
+  h2, p {
     color: var(--paletteCarbone);
   }
+
+  .connectUsingAll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .connectUsing {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+    }
+  }
+
+  button {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+
+  }
+
+  max-width: 400px;
+  min-width: 300px;
 }
 
 html, body {
@@ -147,5 +184,24 @@ body {
     .PaymentButton-text {
       color: #fff;
     }
+  }
+}
+
+.mainSee {
+  min-height: calc(100vh - 70px - 41px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.btnGlow{
+  text-transform: uppercase;
+  transition: all 0.5s ease-in-out;
+  color: rgba(255, 255, 255, .8);
+  background-color: var(--paletteRed);
+  &:hover {
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 0 5px 15px var(--PalletteMaximumRed);
   }
 }

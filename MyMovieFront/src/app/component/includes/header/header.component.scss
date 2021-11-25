@@ -3,7 +3,7 @@
 
 nav {
 
-  a,p, h1,h2,h3, .logo{
+  a, p, h1, h2, h3, .logo {
     user-select: none;
 
   }
@@ -98,14 +98,21 @@ nav {
     #dropdownProfile {
       position: absolute;
       top: 80px;
-      right: 50px;
+      //right: 50px;
       opacity: 0;
       pointer-events: none;
       transition: top 0.3s ease, opacity 0.1s ease;
+      right: 5vw;
 
       ul {
+        position: relative;
         list-style-type: none;
         text-align: center;
+        top: -10px;
+
+        li {
+          margin-top: 10px;
+        }
       }
 
 
@@ -147,7 +154,7 @@ nav {
       display: flex;
       flex-direction: row;
 
-      p{
+      p {
         margin-top: 10px;
         margin-right: 10px;
         font-weight: bold;
@@ -298,8 +305,9 @@ nav .logo.space {
   }
   #profile {
     margin-right: 10px;
-    .profileWrapper{
-      p{
+
+    .profileWrapper {
+      p {
         display: none;
       }
     }

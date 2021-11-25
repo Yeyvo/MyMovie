@@ -48,37 +48,14 @@ import {GenreListModule} from "./component/genre-list/genre-list.module";
 import {PersonModule} from "./component/person/person.module";
 import {WindowRefService} from "./services/windowRef.service";
 
-const appRoutes: Routes = [
-  {path: 'auth/signup', component: SignupComponent},
-  {path: 'auth/signin', component: SigninComponent},
-  {path: 'auth/profile', component: ProfileComponent},
-//   {
-//   path: 'movies',
-//   loadChildren: () => import('./component/movies/movies.module').then(mod => mod.MoviesModule)
-// },
-//
-// {
-//   path: 'movies/:id', loadChildren: () => import('./component/movie-details/movie-details.module').then(mod => mod.MovieDetailsModule)
-// },
-//
-// {
-//   path: 'genres/:id/:name',
-//     loadChildren: () => import('./component/genre/genre.module').then(mod => mod.GenreModule)
-// },
-//
-// {
-//   path: 'genres',
-//     loadChildren: () => import('./component/genre-list/genre-list.module').then(mod => mod.GenreListModule)
-// },
-//
-// {
-//   path: 'person/:id',
-//     loadChildren: () => import('./component/person/person.module').then(mod => mod.PersonModule)
-// },
-  {path: '', component: HomeComponent, pathMatch: 'full'},
-  {path: 'not-found', component: FourOhFourComponent},
-  {path: '**', redirectTo: 'not-found'},
-];
+// const appRoutes: Routes = [
+//   {path: 'auth/signup', component: SignupComponent},
+//   {path: 'auth/signin', component: SigninComponent},
+//   {path: 'auth/profile', component: ProfileComponent},
+//   {path: '', component: HomeComponent, pathMatch: 'full'},
+//   {path: 'not-found', component: FourOhFourComponent},
+//   {path: '**', redirectTo: 'not-found'},
+// ];
 
 const firebaseConfig = {
   apiKey: "AIzaSyB_EBZG7QVI6TXcufOGA7l23VbM-Y9sNIs",
@@ -126,7 +103,7 @@ const firebaseConfig = {
 
     NgbModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes),
+    // RouterModule.forRoot(appRoutes),
     FontAwesomeModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
