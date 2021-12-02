@@ -105,25 +105,21 @@
   margin-bottom: 20px;
 }
 
-// #pr_id_2 .ui-carousel-item{
-//   flex: 0 0 16.666666666666668% !important;
-// }
-
-.ui-carousel-prev, .ui-carousel-next{
-  background-color: $secondary-color !important;
-  color: $text-color !important;
-  border-radius: 1px !important;
-  opacity: 1;
-  border: 1px solid $secondary-color !important;
-  &:focus{
-    outline: none !important;
-    box-shadow: none !important
-  }
-
-  // @media (max-width: $breakpoint-xsmall) {
-  //   display: none;
-  // }
-}
+//.ui-carousel-prev, .ui-carousel-next{
+//  background-color: $secondary-color !important;
+//  color: $text-color !important;
+//  border-radius: 1px !important;
+//  opacity: 1;
+//  border: 1px solid $secondary-color !important;
+//  &:focus{
+//    outline: none !important;
+//    box-shadow: none !important
+//  }
+//
+//  // @media (max-width: $breakpoint-xsmall) {
+//  //   display: none;
+//  // }
+//}
 
 .ui-carousel-content,
 .ui-carousel-container{
@@ -138,8 +134,46 @@ body .ui-sidebar{
 body .pi{
   font-size: 3rem;
   color: $text-color;
+  background-color: var(--PalletteMaximumRed);
+  margin: 0 10px;
+  padding: 5px 5px;
+  border-radius: 5px;
+  opacity: 0.8;
+
+  &:hover{
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: var(--paletteRed);
+    transition: 0.4s;
+    opacity: 1;
+
+  }
 }
 
+.p-carousel .p-carousel-indicators {
+  padding: 1rem;
+  @media (max-width: $breakpoint-xsmall) {
+    display: none;
+  }
+}
+.p-carousel .p-carousel-indicators .p-carousel-indicator {
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.p-carousel .p-carousel-indicators .p-carousel-indicator button {
+  background-color: #f4f4f4;
+  width: 2rem;
+  height: 0.5rem;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  border-radius: 0;
+}
+.p-carousel .p-carousel-indicators .p-carousel-indicator button:hover {
+  background: #eaeaea;
+}
+.p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+  background: var(--paletteRed);
+  color: #ffffff;
+}
 .ui-sidebar-top{
   height: 5em;
 }

@@ -20,6 +20,12 @@
     height: 0;
     padding-bottom: 40%;
   }
+
+  @media (max-width: $breakpoint-medium-first){
+    .desc{
+      display:none;
+    }
+  }
 }
 .slider {
   position: absolute;
@@ -105,6 +111,7 @@
   max-width: none;
   height: 100%;
 
+  //@media (max-width: $breakpoint-medium - 1) {
   @media (max-width: $breakpoint-medium - 1) {
     width: 100%;
     object-fit: cover;

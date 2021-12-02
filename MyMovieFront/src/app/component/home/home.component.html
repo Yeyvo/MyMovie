@@ -11,9 +11,9 @@
     </div>
 
     <app-skeleton *ngIf="loader" ></app-skeleton>
-    <p-carousel [value]="nowPlaying" [numVisible]="6" [numScroll]="4" [circular]="true" *ngIf="!loader"
-        [responsiveOptions]="responsiveOptions">
-        <ng-template let-movie  pTemplate="item">
+    <p-carousel [value]="nowPlaying" [numVisible]="5" [numScroll]="4" [circular]="true" *ngIf="!loader"
+        [responsiveOptions]="responsiveOptions" >
+        <ng-template let-movie  pTemplate="item" height="auto">
             <div class="listing-item-style" [routerLink]="['/movies/', movie.id]" >
                 <div class="overlay">
                     <div class="hover"><i class="material-icons">play_arrow</i> PLAY NOW</div>
@@ -28,5 +28,30 @@
             </div>
         </ng-template>
     </p-carousel>
+
 </div>
 
+
+<!--<p-carousel [value]="nowPlaying" orientation="vertical" [style]="{'max-width':'400px', 'margin-top':'2em'}" verticalViewPortHeight="250px" [numVisible]="1" [numScroll]="1">-->
+<!--  <ng-template pTemplate="header">-->
+<!--    <h5>Vertical</h5>-->
+<!--  </ng-template>-->
+<!--  <ng-template let-movie pTemplate="item">-->
+<!--    <div class="product-item">-->
+<!--      <div class="product-item-content">-->
+<!--        <div class="p-mb-3">-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <h4 class="p-mb-1">{{movie?.title}}</h4>-->
+<!--          <h6 class="p-mt-0 p-mb-3">${{movie?.release_date | date: 'yyyy'}}</h6>-->
+<!--          <span [class]="'product-badge status-'">{{movie?.vote_average}}</span>-->
+<!--          <div class="car-buttons p-mt-5">-->
+<!--            <p-button type="button" styleClass="p-button p-button-rounded p-mr-2" icon="pi pi-search"></p-button>-->
+<!--            <p-button type="button" styleClass="p-button-success p-button-rounded p-mr-2" icon="pi pi-star"></p-button>-->
+<!--            <p-button type="button" styleClass="p-button-help p-button-rounded" icon="pi pi-cog"></p-button>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </ng-template>-->
+<!--</p-carousel>-->

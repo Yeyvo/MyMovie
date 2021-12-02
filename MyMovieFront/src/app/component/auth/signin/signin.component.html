@@ -11,6 +11,9 @@
         <label for="password">Password :</label>
         <input type="password" id="password" class="form-control" formControlName="password">
       </div>
+      <div>
+        <span (click)="resetPassWordEmail()" class="passReset" >Mot de passe oublier ?</span>
+      </div>
       <p class="text-danger">{{errorMessage}}
         <button class="btn" type="submit" [disabled]="signInForm.invalid">Connect</button>
     </form>

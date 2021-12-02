@@ -2,12 +2,6 @@
 @import "../../../../styles";
 
 nav {
-
-  a, p, h1, h2, h3, .logo {
-    user-select: none;
-
-  }
-
   background: var(--paletteBlackBlue);
   display: flex;
   flex-wrap: wrap;

@@ -148,4 +148,12 @@ export class AuthService {
     // const docRef = doc( `users/${user.uid}`);
 
   }
+
+  sendResetEmail(email: string) {
+    this.afAuth.sendPasswordResetEmail(email).then(r => {
+      console.log(" Sent ")
+    }).catch(err =>{
+      console.log(err);
+    });
+  }
 }

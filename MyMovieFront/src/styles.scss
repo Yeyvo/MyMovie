@@ -49,6 +49,9 @@ $MyMovieFront-theme: mat.define-light-theme((
 @import '../src/assets/scss/videos';
 @import '../src/assets/scss/image';
 
+//@import '~primeng/resources/themes/nova/theme.css';
+@import '~primeng/resources/primeng.css';
+@import '~primeicons/primeicons.css';
 
 :root {
   //color palette
@@ -66,12 +69,18 @@ $MyMovieFront-theme: mat.define-light-theme((
   --paletteCarbone: #1e232b;
 
   --paletteDarkGray: #212121;
-  --paletteBackgroundBlack : #141414;
+  --paletteBackgroundBlack: #141414;
+
+  --paletteLightBlue: #5a90c0
 }
 
 p, a, h1, h2, h3, h4, label {
   //  color: var(--PalletteArgent);
   color: var(--paletteWhite);
+}
+
+p, a, h1, h2, h3, h4, label, .logo, .pane {
+  user-select: none;
 }
 
 .center {
@@ -94,6 +103,7 @@ p, a, h1, h2, h3, h4, label {
 .card-form {
 
   font-size: 1.1em;
+
   form {
 
     display: flex;
@@ -104,11 +114,13 @@ p, a, h1, h2, h3, h4, label {
       //max-width: 70%;
       font-size: 100%;
     }
-    button{
+
+    button {
       color: var(--paletteWhite);
       background-color: var(--paletteRed);
       border-color: var(--paletteRed);
-      &:hover{
+
+      &:hover {
         background-color: var(--PalletteMaximumRed);
         transition: 1s;
       }
@@ -195,13 +207,28 @@ body {
 
 }
 
-.btnGlow{
+.btnGlow {
   text-transform: uppercase;
   transition: all 0.5s ease-in-out;
   color: rgba(255, 255, 255, .8);
   background-color: var(--paletteRed);
+
   &:hover {
     color: rgba(255, 255, 255, 1);
     box-shadow: 0 5px 15px var(--PalletteMaximumRed);
   }
+}
+
+.backdrop {
+  overflow: hidden;
+}
+
+/*prime-ng Carousel
+  fix misalignment
+*/
+
+.p-carousel-items-container .p-carousel-item {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: auto
 }

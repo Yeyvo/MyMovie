@@ -41,4 +41,11 @@ export class SigninComponent implements OnInit {
       this.errorMessage = err;
     });
   }
+
+  resetPassWordEmail() {
+    const email = this.signInForm.get('email').value;
+    if(email !== ""){
+      this.auth.sendResetEmail(email);
+    }
+  }
 }
