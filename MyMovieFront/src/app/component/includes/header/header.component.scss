@@ -1,7 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
 @import "../../../../styles";
 
+
+.hidenNav{
+  top: -70px;
+
+}
+.shownNav{
+  top: 0;
+}
 nav {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  top: 0;
+  transition: top 0.3s;
+
   background: var(--paletteBlackBlue);
   display: flex;
   flex-wrap: wrap;
@@ -207,6 +221,8 @@ nav {
 
       &.active {
         left: 0px;
+        top: 67px;
+        overflow: hidden;
       }
 
       li {
@@ -308,12 +324,17 @@ nav .logo.space {
   }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 400px) {
+  //nav .menu-icon,
+  //nav .cancel-icon,
+  //nav .search-icon {
+  //  margin: 0 10px;
+  //  font-size: 16px;
+  //}
   nav .menu-icon,
   nav .cancel-icon,
   nav .search-icon {
-    margin: 0 10px;
-    font-size: 16px;
+    margin: 0 5px;
   }
 }
 

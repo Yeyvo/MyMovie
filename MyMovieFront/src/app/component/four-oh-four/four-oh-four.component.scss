@@ -1,9 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=opensans:500);
 
+
 .c {
   text-align: center;
   //display: block;
   flex-direction: column;
+
+  //display: flex;
+  //justify-content: center;
+  //align-items: center;
 }
 
 ._404 {
