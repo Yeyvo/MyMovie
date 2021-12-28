@@ -36,3 +36,5 @@ backend/.idea
 /dist
 /tmp
 /out-tsc
+
+Multi_Label_dataset/
