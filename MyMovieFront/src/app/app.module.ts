@@ -48,6 +48,7 @@ import {GenreListModule} from "./component/genre-list/genre-list.module";
 import {PersonModule} from "./component/person/person.module";
 import {WindowRefService} from "./services/windowRef.service";
 import {ButtonModule} from "primeng/button";
+import { RecommendationComponent } from './component/recommendation/recommendation.component';
 
 // const appRoutes: Routes = [
 //   {path: 'auth/signup', component: SignupComponent},
@@ -81,6 +82,7 @@ const firebaseConfig = {
     FourOhFourComponent,
     SliderComponent,
     FooterComponent,
+    RecommendationComponent,
 
   ],
     imports: [

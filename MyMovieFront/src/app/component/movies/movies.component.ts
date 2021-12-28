@@ -44,7 +44,8 @@ export class MoviesComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     // if (!this.isSearching) {
-      this.getTopRatedMovies(1);
+      //this.getTopRatedMovies(1);
+      this.getMovies();
     // }
     this.moviesSearchSubscription = this.movieService.moviesSearchSubject.subscribe(
       (movieSearchResult) => {
@@ -83,9 +84,15 @@ export class MoviesComponent implements OnInit, OnDestroy {
   //   this.movieService.searchMovies(this.searchStr);
   // }
 
+  getMovies(){
+    this.getTopRatedMovies(1);
+  }
+
+
   ngOnDestroy(): void {
     this.moviesSearchSubscription.unsubscribe();
   }
+
 
 
 }

@@ -6,6 +6,7 @@ import {Observable, Subscription} from "rxjs";
 import {MoviesService} from "../../../services/movies.service";
 import {MoviesComponent} from "../../movies/movies.component";
 import {Router} from "@angular/router";
+import {delay} from "rxjs/internal/operators/delay";
 
 @Component({
   selector: 'app-header',
@@ -20,6 +21,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   searchBtnHide: boolean = false;
   cancelBtnShow: boolean = false;
   formActive: boolean = false;
+
+  hidenNav: boolean = false;
+
   faSearch = faSearch;
   faTimes = faTimes;
   faBars = faBars;
@@ -28,15 +32,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
   isAuth: boolean;
   authSubscription: Subscription;
   user: User;
-  userSub : Subscription;
+  userSub: Subscription;
   searchRes: any;
   searchStr: string;
 
 
   constructor(
     public auth: AuthService,
-    private movieService : MoviesService,
-    private router : Router
+    private movieService: MoviesService,
+    private router: Router
   ) {
   }
 
@@ -46,9 +50,20 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.isAuth = newData;
     });
 
-    this.userSub = this.auth.user$.subscribe((newUser)=>{
+    this.userSub = this.auth.user$.subscribe((newUser) => {
       this.user = newUser;
     });
+
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+      var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+          this.hidenNav = false;
+      } else {
+        this.hidenNav = true;
+      }
+      prevScrollpos = currentScrollPos;
+    }
 
   }
 
@@ -63,18 +78,26 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.searchBtnHide = true;
     this.cancelBtnShow = true;
     this.profileActive = false;
+    this.disableScrolling();
 
     this.formActive = false;
     this.searchBtnHide = false;
   }
 
-  onClickCancelBtn() {
+  onClickCancelBtnMenu() {
     this.itemsActive = false
     this.menuBtnHide = false;
     this.searchBtnHide = false;
     this.cancelBtnShow = false;
     this.formActive = false;
+
+  }
+
+  onClickCancelBtn() {
+    this.onClickCancelBtnMenu();
     this.profileActive = false;
+
+    this.enableScrolling();
   }
 
   onClickSearchBtn() {
@@ -100,12 +123,45 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   searchMovies() {
-    this.movieService.searchMovies(this.searchStr, 1);
-    this.router.navigate(['/movies']);
+    if (this.searchStr !== undefined /*|| this.searchStr !== ''*/) {
+      this.movieService.searchMovies(this.searchStr, 1);
+      this.searchStr = '';
+      this.router.navigate(['/movies']);
+    } else {
+      this.getMoviesBtnClick();
+    }
+  }
+
+  getMoviesBtnClick(){
+    this.getTopRatedMovies(1);
+    this.router.navigate(['/movies']).then(() => {
+      window.location.reload();
+    });
+  }
+
+
+  getTopRatedMovies(page: number) {
+    this.movieService.getTopRatedMovies(page).pipe(delay(2000)).subscribe((res: any) => {
+        this.searchRes = res.total_results;
+      },
+      error => console.log(error));
   }
 
   onLogo() {
     this.onClickCancelBtn();
     this.router.navigate(['/']);
+  }
+
+  disableScrolling() {
+    // var x = window.scrollX;
+    // var y = window.scrollY;
+    // window.onscroll = function () {
+    //   window.scrollTo(x, y);
+    // };
+  }
+
+  enableScrolling() {
+    // window.onscroll = function () {
+    // };
   }
 }

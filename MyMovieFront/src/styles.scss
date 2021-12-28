@@ -198,13 +198,20 @@ body {
     }
   }
 }
-
+.mainMarging{
+  margin-top: 70px;
+}
 .mainSee {
-  min-height: calc(100vh - 70px - 41px);
+  min-height: calc(100vh  - 41px);//- 70px
+}
+
+
+
+.mainSeeFlex {
+  min-height: calc(100vh  - 41px);//- 70px
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .btnGlow {

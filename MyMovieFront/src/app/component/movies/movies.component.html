@@ -1,4 +1,4 @@
-<div class="listing">
+<div class="listing mainSee">
     <div class="listing__head">
         <h3 class="listing__title" *ngIf="!searchRes">Movies</h3>
         <h3 class="listing__title" *ngIf="searchRes">Search Movies</h3>
@@ -28,6 +28,7 @@
         </div>
     </ng-container>
 
+  <ng-container *ngIf="!searchRes">
     <app-skeleton *ngIf="loader"></app-skeleton>
     <div class="row" *ngIf="!loader">
         <div class="col-md-2 listing__items" *ngFor="let movie of topRated | slice:0:18">
@@ -48,6 +49,6 @@
             </div>
         </div>
     </div>
-
+  </ng-container>
     <mat-paginator [length]="totalResults" [pageSize]="20" (page)="changePage($event)"></mat-paginator>
 </div>

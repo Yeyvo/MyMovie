@@ -58,6 +58,8 @@ export class MoviesService {
 
   getTopRatedMovies(page: number): Observable<any> {
     console.log(`${this.baseUrl}movie/top_rated?api_key=${this.apiKey}&page=${page}&language=${this.language}&region=${this.region}`)
+    this.searchStr = "";
+    this.searchRes = null;
     return this.http.get(`${this.baseUrl}movie/top_rated?api_key=${this.apiKey}&page=${page}&language=${this.language}&region=${this.region}`);
   }
 

@@ -1,4 +1,9 @@
-<nav>
+<nav
+  [ngClass]="{
+    'hidenNav' : hidenNav,
+    'shownNav' : !hidenNav
+}"
+>
   <div class="menu-icon">
     <span [ngClass]="{
     'hide':menuBtnHide
@@ -11,7 +16,7 @@
     'active':itemsActive
     }">
     <li>
-      <a  (click)="onClickItem()" routerLink="movies">Movies</a>
+      <a (click)="onClickItem(); getMoviesBtnClick()" routerLink="movies">Movies</a>
     </li>
     <li *ngIf="!isAuth" class="nav-item" routerLinkActive="active">
       <a class="nav-link" (click)="onClickItem()" routerLink="auth/signup">Register</a>
@@ -24,9 +29,9 @@
     <li class="nav-item" routerLinkActive="active">
       <a routerLink="contact" (click)="onClickItem()">Contact</a>
     </li>
-<!--    <li class="nav-item" routerLinkActive="active">-->
-<!--      <a routerLink="feedback" (click)="onClickItem()">Feedback</a>-->
-<!--    </li>-->
+    <!--    <li class="nav-item" routerLinkActive="active">-->
+    <!--      <a routerLink="feedback" (click)="onClickItem()">Feedback</a>-->
+    <!--    </li>-->
     <li *ngIf="isAuth" class="nav-item" routerLinkActive="active">
       <a class="nav-link" (click)="onClickItem(); onSignOUt()" routerLink="/">Sign out</a>
     </li>
@@ -52,14 +57,14 @@
       <fa-icon [icon]="faSearch"></fa-icon>
     </button>
   </form>
-  <div *ngIf="isAuth" id="profile" class="">
-<!--    <div class="profileWrapper" (click)="this.profileActive = !this.profileActive">-->
+  <div *ngIf="isAuth" id="profile" class="" (click)="onClickCancelBtnMenu()">
+    <!--    <div class="profileWrapper" (click)="this.profileActive = !this.profileActive">-->
     <div class=" profileWrapper d-flex flex-row align-items-center" (click)="this.profileActive = !this.profileActive">
       <p class="align-self-center" style="font-size: 100%">{{user.displayName | slice : 0: 10 }}</p>
 
-        <img [src]="user.photoURL" width="40" height="40" class="rounded-circle">
+      <img [src]="user.photoURL" width="40" height="40" class="rounded-circle">
 
-<!--      </a>-->
+      <!--      </a>-->
     </div>
 
     <div id="dropdownProfile" [ngClass]="{
@@ -67,10 +72,11 @@
     }">
       <ul>
         <li>
-          <a class="dropdownProfile-item" routerLink="auth/profile" (click)="onClickItemProfile()">Profile</a>
+          <a class="dropdownProfile-item" routerLink="auth/profile" (click)="onClickItemProfile(); onClickCancelBtn()">Profile</a>
         </li>
         <li routerLinkActive="active">
-          <a class="dropdownProfile-item" routerLink="" (click)="onSignOUt(); onClickItemProfile()">Log Out</a>
+          <a class="dropdownProfile-item" routerLink="" (click)="onSignOUt(); onClickItemProfile(); onClickCancelBtn()">Log
+            Out</a>
         </li>
       </ul>
     </div>
