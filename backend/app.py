@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask , request
 
 app = Flask(__name__)
 
@@ -8,4 +8,10 @@ def index():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+@app.route('/categorization')
+def getCategories():
+    request.args.get("movieId")
+
 

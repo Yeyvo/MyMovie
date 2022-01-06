@@ -79,7 +79,7 @@ def getModel() :
 
     print("import data\n")
     data = pd.read_csv(
-      'C:\\Users\\thex2\\Desktop\\Cours\\Semestre_3\\PI\\Programme\\MyMovie\\backend\\Multi_Label_dataset\\train.csv')
+      'Multi_Label_dataset/train.csv')
     print("import done\n")
     data.head()
     img_width = 350
@@ -88,7 +88,7 @@ def getModel() :
     X = []
 
     for i in tqdm(range(data.shape[0])):
-      path = 'C:\\Users\\thex2\\Desktop\\Cours\\Semestre_3\\PI\\Programme\\MyMovie\\backend\\Multi_Label_dataset\\Images\\' + \
+      path = 'Multi_Label_dataset/Images/' + \
              data['Id'][i] + '.jpg'
       img = image.load_img(path, target_size=(img_width, img_height, 3))
       img = image.img_to_array(img)
@@ -142,7 +142,7 @@ def evaluatePoster(model,poster):
 
 
 model = getModel()
-evaluatePoster(model,'C:\\Users\\thex2\\Desktop\\Cours\\Semestre_3\\PI\\Programme\\MyMovie\\backend\\sing.jpg')
+# evaluatePoster(model,'sing.jpg')
 
 
 
