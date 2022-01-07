@@ -4,6 +4,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { AppMovieDialogComponent } from '../movie-details/app-movie-dialog/app-movie-dialog.component';
 import {MatDialog} from "@angular/material/dialog";
 import {MoviesService} from "../../services/movies.service";
+import {CnnGenreService} from "../../services/cnn-genre.service";
 
 @Component({
   selector: 'app-movie-details',
@@ -21,13 +22,15 @@ export class MovieDetailsComponent implements OnInit {
   backdrops: any = [];
   recomendMovies: any = [];
   responsiveOptions;
+  movieGeneratedGenre : [];
 
 
   constructor(
     private movieService: MoviesService,
     private router: ActivatedRoute,
     private sanitizer: DomSanitizer,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private movieCategorization: CnnGenreService
   ) {
     this.responsiveOptions = [
       {
@@ -57,12 +60,15 @@ export class MovieDetailsComponent implements OnInit {
       this.getBackropsImages(this.id);
       this.getRecomendMovie(this.id);
     });
+
   }
 
   getSingleMoviesDetails(id){
     this.movieService.getMovie(id).subscribe((res: any) => {
       this.movie = res;
+      this.movieCategorization.getMovieGenre("https://image.tmdb.org/t/p/w370_and_h556_bestv2/" +  this.movie.poster_path)
     });
+
   }
 
   getSingleMoviesVideos(id) {
