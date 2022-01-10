@@ -22,7 +22,7 @@ export class MovieDetailsComponent implements OnInit {
   backdrops: any = [];
   recomendMovies: any = [];
   responsiveOptions;
-  movieGeneratedGenre : [];
+  movieGeneratedGenre : any = [];
 
 
   constructor(
@@ -66,7 +66,11 @@ export class MovieDetailsComponent implements OnInit {
   getSingleMoviesDetails(id){
     this.movieService.getMovie(id).subscribe((res: any) => {
       this.movie = res;
-      this.movieCategorization.getMovieGenre("https://image.tmdb.org/t/p/w370_and_h556_bestv2/" +  this.movie.poster_path)
+      this.movieCategorization.getMovieGenre( this.movie.poster_path).subscribe((res:any)=>{
+        if(res.status === 'ok'){
+          this.movieGeneratedGenre = res.data;
+        }
+      })
     });
 
   }
@@ -91,6 +95,7 @@ export class MovieDetailsComponent implements OnInit {
 
   getCast(id) {
     this.movieService.getMovieCredits(id).subscribe((res: any) => {
+      console.log(res)
       this.casts = res.cast;
     });
   }

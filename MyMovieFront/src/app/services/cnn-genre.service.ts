@@ -7,11 +7,11 @@ import {HttpClient} from "@angular/common/http";
 })
 export class CnnGenreService {
 
-  urlBase : string = '172.0.0.2';
+  urlBase : string = 'http://127.0.0.1:4996';
 
   constructor(private httpClient : HttpClient) { }
 
-  getMovieGenre(MovieURL :string): Observable<any>{
-    return this.httpClient.get(this.urlBase+"/categorization?movieURL="+MovieURL);
+  getMovieGenre(posterId :string): Observable<any>{
+    return this.httpClient.get(this.urlBase+"/categorization?posterId="+posterId.slice(1,posterId.length));
   }
 }

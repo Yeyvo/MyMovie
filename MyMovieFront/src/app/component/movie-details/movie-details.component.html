@@ -94,14 +94,14 @@
                       <a routerLink="/genres/{{genre.id}}/{{genre.name}}">{{ genre?.name }}</a>
                     </div>
                   </li>
-<!--                  <li *ngIf="movieGeneratedGenre.length">-->
-<!--                    <div class="label">-->
-<!--                      GeneratedGenre-->
-<!--                    </div>-->
-<!--                    <div class="comma_" *ngFor="let genre of movieGeneratedGenre">-->
-<!--                      <a routerLink="/genres/{{genre.id}}/{{genre.name}}">{{ genre?.name }} ({{genre?.confidence}})</a>-->
-<!--                    </div>-->
-<!--                  </li>-->
+                  <li *ngIf="movieGeneratedGenre.length">
+                    <div class="label">
+                      GeneratedGenre
+                    </div>
+                    <div class="comma_" *ngFor="let genre of movieGeneratedGenre">
+                      <a routerLink="/genres/{{genre.id}}/{{genre.name}}">{{ genre?.name }} ({{genre?.confidence}})</a>
+                    </div>
+                  </li>
                   <li *ngIf="movie?.status">
                     <div class="label">
                       Status
