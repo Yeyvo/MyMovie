@@ -111,7 +111,7 @@ def getModel() :
     print("Training set created\n")
 
     print("model creation")
-
+    print("shape : ", X_train[0].shape, "\n")
     model = createModel(X_train[0].shape)
 
     model.summary()
@@ -137,20 +137,23 @@ def evaluatePoster(model,poster):
   img = img.reshape(1, img_width, img_height, 3)
   Y_prob = model.predict(img)
   data = ["Action","Adventure","Animation","Biography","Comedy","Crime","Documentary","Drama","Family","Fantasy","History","Horror","Music","Musical","Mystery","N/A","News","Reality-TV","Romance","Sci-Fi","Short","Sport","Thriller","War","Western"]
-  print(Y_prob)
+  print("\n ###YPROB### ",Y_prob)
 
-  top2 = np.argsort(Y_prob[0])[:-3:-1]
-  top2proba = np.sort(Y_prob[0])[:-3:-1]
+  top3 = np.argsort(Y_prob[0])[:-4:-1]
+  print("\n ###top3### ",top3)
+  top3proba = np.sort(Y_prob[0])[:-4:-1]
 
   res = []
-  for i in range(2):
-    print(data[top2[i]] , "   :   " , top2proba[i])
+  for i in range(3):
+    print(data[top3[i]] , "   :   " , top3proba[i])
     movie = {}
-    movie['name'] = data[top2[i]]
-    movie['confidence'] = "{:.1f}%".format(top2proba[i]*100)
+    movie['name'] = data[top3[i]]
+    movie['confidence'] = "{:.1f}%".format(top3proba[i]*100)
     movie['id'] = 0
     res.append(movie)
-    print("MMMMM : " , movie)
+
+
+
 
   return res
 
@@ -158,8 +161,8 @@ def evaluatePoster(model,poster):
 
 
 
-model = getModel()
-# evaluatePoster(model,'sing.jpg')
+# model = getModel()
+# evaluatePoster(model,'PosterCache/4j0PNHkMr5ax3IA8tjtxcmPU3QT.jpg')
 
 
 

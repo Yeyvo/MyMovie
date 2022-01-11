@@ -38,7 +38,6 @@ def get():
 if __name__ == "__main__":
     if not os.path.exists(imgFolderCacheName):
         os.makedirs(imgFolderCacheName)
-
+    model = getModel()
     app.run( debug=True, port=4996)
     app.run(host="0.0.0.0", port=8080, debug=True)
-    model = getModel()
