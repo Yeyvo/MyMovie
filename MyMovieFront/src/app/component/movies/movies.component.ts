@@ -17,11 +17,10 @@ export class MoviesComponent implements OnInit, OnDestroy {
   totalResults: any;
   total_results: number;
   searchRes: any = null;
-  searchStr: string = "";
   isSearching: boolean = false;
 
   moviesSearchSubscription: Subscription;
-
+  isMoviesSearchSubscription: Subscription;
   constructor(private movieService: MoviesService) {
     this.responsiveOptions = [
       {
@@ -57,6 +56,10 @@ export class MoviesComponent implements OnInit, OnDestroy {
       }
     );
     this.movieService.emitMovieSearch();
+    this.isMoviesSearchSubscription = this.movieService.isMoviesSearchSubject.subscribe((res) => {
+      this.isSearching = res
+    });
+    this.movieService.emitIsMovieSearch();
   }
 
   getTopRatedMovies(page: number) {
