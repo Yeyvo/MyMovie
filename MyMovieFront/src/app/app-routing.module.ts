@@ -5,11 +5,16 @@ import {SignupComponent} from "./component/auth/signup/signup.component";
 import {SigninComponent} from "./component/auth/signin/signin.component";
 import {ProfileComponent} from "./component/profile/profile.component";
 import {FourOhFourComponent} from "./component/four-oh-four/four-oh-four.component";
+import {RecommendationComponent} from "./component/recommendation/recommendation.component";
 
 const routes: Routes = [{
   path: '',
   component: HomeComponent,
 },
+
+  {
+    path: 'recommendation', component: RecommendationComponent
+  },
 
   {
     path: 'movies',

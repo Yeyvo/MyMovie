@@ -1,1 +1,35 @@
-<p>recommendation works!</p>
+<div class="center-form mainSee">
+  <div class="recommendation" *ngIf="!isResult">
+      <p>{{recommendationTree?.question}}</p>
+<!--    <p>didihehihe shkdhfdh bdsjodshosdf sdfofosdhofdhs sdfhodhohfsdo sdofdjojdsf dsohofhosdhofh sdhdfhod ?</p>-->
+
+    <div class="btnWrapper">
+      <span class="btn btnGlow" (click)="clickTrue()">TRUE</span>
+      <span class="btn btnGlow" (click)="clickFalse()">FALSE</span>
+    </div>
+  </div>
+  <div class="recommendation" *ngIf="isResult">
+    <div class="listing-space mt-20 mb-5">
+      <div class="listing__head">
+        <h2 class="listing__title">Recommended Movies</h2>
+      </div>
+      <p-carousel [value]="recomendMovies" [numVisible]="6" [numScroll]="4" [circular]="false"
+                  [responsiveOptions]="responsiveOptions">
+        <ng-template let-recomend pTemplate="item">
+          <div class="listing-item-style" [routerLink]="['/movies/', recomend.id]">
+            <div class="overlay">
+              <div class="hover"><i class="material-icons">play_arrow</i> PLAY NOW</div>
+            </div>
+            <img *ngIf="recomend?.poster_path"
+                 src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{recomend?.poster_path}}">
+            <img *ngIf="!recomend?.poster_path" src="assets/images/default-movie.png">
+            <h6>{{ recomend?.title }}</h6>
+            <p class="rate"><i class="material-icons">star</i><span>{{recomend?.vote_average}}</span>
+              /10</p>
+            <div class="year"><span>{{recomend?.release_date | date: 'yyyy'}}</span></div>
+          </div>
+        </ng-template>
+      </p-carousel>
+    </div>
+  </div>
+</div>
