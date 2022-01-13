@@ -37,4 +37,12 @@ backend/.idea
 /tmp
 /out-tsc
 
-Multi_Label_dataset/
+/backend/PosterCache/
+backend/__pycache__/CNNCategorisation.cpython-38.pyc
+*.jpg
+*.jpg
+*.tmp
+*.jpg
+*.png
+*.tmp
+*.h5

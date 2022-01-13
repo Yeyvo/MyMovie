@@ -8,6 +8,13 @@ from tqdm import tqdm
 from tensorflow.keras import Sequential
 from tensorflow.keras.layers import Flatten, Dense, Dropout, BatchNormalization, Conv2D, MaxPool2D
 from os.path import exists
+import json
+
+physical_devices = tf.config.list_physical_devices('GPU')
+tf.config.experimental.set_memory_growth(physical_devices[0], True)
+
+img_width = 370
+img_height = 556
 
 def createModel(DataShape) :
   model = Sequential()
@@ -42,7 +49,7 @@ def createModel(DataShape) :
   model.add(Dropout(0.5))
 
   model.add(Dense(25, activation='sigmoid', kernel_regularizer='l2'))
-  model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+  model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=1e-3), loss='binary_crossentropy', metrics=['accuracy'])
   return(model)
 
 def plot_learningCurve(history, epoch):
@@ -72,7 +79,7 @@ def getModel() :
   if (exists('./my_model.h5')):
     model = tf.keras.models.load_model('my_model.h5')
     model.summary()
-
+    print("model fully loaded ")
   else :
 
     print(tf.__version__)
@@ -82,15 +89,14 @@ def getModel() :
       'Multi_Label_dataset/train.csv')
     print("import done\n")
     data.head()
-    img_width = 350
-    img_height = 350
+
 
     X = []
 
     for i in tqdm(range(data.shape[0])):
       path = 'Multi_Label_dataset/Images/' + \
-             data['Id'][i] + '.jpg'
-      img = image.load_img(path, target_size=(img_width, img_height, 3))
+             data['Id'][i] + '.png'
+      img = image.load_img(path, target_size=(img_width, img_height, 3), )
       img = image.img_to_array(img)
       img = img / 255.0
       X.append(img)
@@ -105,44 +111,49 @@ def getModel() :
     print("Training set created\n")
 
     print("model creation")
-
+    print("shape : ", X_train[0].shape, "\n")
     model = createModel(X_train[0].shape)
 
     model.summary()
 
-    history = model.fit(X_train, y_train, epochs=16, validation_data=(X_test, y_test))
+    history = model.fit(X_train, y_train, epochs=32, validation_data=(X_test, y_test))
 
     model.save('my_model.h5')
 
-    plot_learningCurve(history, 10)
+#     plot_learningCurve(history, 10)
 
     test_loss, test_acc = model.evaluate(X_test, y_test, verbose=2)
 
     print('\nTest accuracy:', test_acc)
+    print('\nTest loss:', test_loss)
 
-  return model;
+  return model
 
 def evaluatePoster(model,poster):
-  img_width = 350
-  img_height = 350
   img = image.load_img(poster,target_size=(img_width, img_height, 3))
-  plt.imshow(img)
+#   plt.imshow(img)
   img = image.img_to_array(img)
   img = img / 255.0
   img = img.reshape(1, img_width, img_height, 3)
   Y_prob = model.predict(img)
   data = ["Action","Adventure","Animation","Biography","Comedy","Crime","Documentary","Drama","Family","Fantasy","History","Horror","Music","Musical","Mystery","N/A","News","Reality-TV","Romance","Sci-Fi","Short","Sport","Thriller","War","Western"]
-  print(Y_prob)
+  print("\n ###YPROB### ",Y_prob)
 
-  top2 = np.argsort(Y_prob[0])[:-3:-1]
-  top2proba = np.sort(Y_prob[0])[:-3:-1]
-  for i in range(2):
-    print(data[top2[i]] , "   :   " , top2proba[i])
+  top3 = np.argsort(Y_prob[0])[:-4:-1]
+  print("\n ###top3### ",top3)
+  top3proba = np.sort(Y_prob[0])[:-4:-1]
+
+  res = []
+  for i in range(3):
+    print(data[top3[i]] , "   :   " , top3proba[i])
+    movie = {}
+    movie['name'] = data[top3[i]]
+    movie['confidence'] = "{:.1f}%".format(top3proba[i]*100)
+    movie['id'] = 0
+    res.append(movie)
 
 
 
-model = getModel()
-# evaluatePoster(model,'sing.jpg')
 
-
+  return res
 
