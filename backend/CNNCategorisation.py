@@ -157,12 +157,3 @@ def evaluatePoster(model,poster):
 
   return res
 
-
-
-
-
-# model = getModel()
-# evaluatePoster(model,'PosterCache/4j0PNHkMr5ax3IA8tjtxcmPU3QT.jpg')
-
-
-
