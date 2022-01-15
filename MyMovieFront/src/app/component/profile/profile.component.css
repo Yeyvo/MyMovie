@@ -1,3 +1,53 @@
-
+.profileContainer {
+  background-color: var(--paletteBlackBlue);
+  border-radius: 40px;
+  padding-bottom: 70px;
+}
+.profileContainer .mainProfile {
+  margin-top: 10vh;
+  padding-bottom: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 3rem;
+}
+.profileContainer .mainProfile img {
+  position: relative;
+  top: -70px;
+  width: 150px;
+  height: auto;
+}
+.profileContainer .mainProfile .parent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 50px;
+  grid-row-gap: 0px;
+}
+.profileContainer .mainProfile .div1 {
+  grid-area: 1/1/2/2;
+  font-weight: bold;
+}
+.profileContainer .mainProfile .div2 {
+  grid-area: 2/1/3/2;
+  font-weight: bold;
+}
+.profileContainer .mainProfile .div3 {
+  grid-area: 2/2/3/3;
+  color: var(--PalletteMaximumRed);
+}
+.profileContainer .mainProfile .div4 {
+  grid-area: 1/2/2/3;
+  color: var(--PalletteMaximumRed);
+}
+@media (max-width: 450px) {
+  .profileContainer .mainProfile {
+    font-size: 2.5rem;
+  }
+}
+.profileContainer .centerText {
+  text-align: center;
+  width: 100%;
+}
 
 /*# sourceMappingURL=profile.component.css.map */

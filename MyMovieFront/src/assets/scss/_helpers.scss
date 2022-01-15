@@ -177,3 +177,16 @@ body .pi{
 .ui-sidebar-top{
   height: 5em;
 }
+
+
+.recom .p-carousel-items-content {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.recom .p-carousel-items-container {
+  max-width: 350px;
+  width: calc(100vh ) ;
+}

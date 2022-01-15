@@ -94,6 +94,7 @@ export class MoviesService {
   getMovie(id: string): Observable<any> {
     this.isSearching = false;
     this.emitIsMovieSearch();
+    console.log(`${this.baseUrl}movie/${id}?api_key=${this.apiKey}`)
     return this.http.get(`${this.baseUrl}movie/${id}?api_key=${this.apiKey}`);
   }
 

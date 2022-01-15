@@ -1,15 +1,80 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {AuthService} from "../../services/auth.service";
+import {User} from "../../models/User";
+import {Subscription} from "rxjs";
+import {MoviesService} from "../../services/movies.service";
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent implements OnInit,OnDestroy {
+  private userSub: Subscription;
+  user: User;
+  recMovies: any[] = [];
+  responsiveOptions = [
+    {
+      breakpoint: '1024px',
+      numVisible: 3,
+      numScroll: 3
+    },
+    {
+      breakpoint: '768px',
+      numVisible: 2,
+      numScroll: 2
+    },
+    {
+      breakpoint: '560px',
+      numVisible: 1,
+      numScroll: 1
+    }
+  ];
+  hasRecommendations: boolean = false;
+  scrollvalue: number;
+  maxVisible: number;
 
-  constructor() { }
+
+  constructor(public userAuth : AuthService,public movies : MoviesService) { }
 
   ngOnInit(): void {
+    this.userSub = this.userAuth.user$.subscribe((data) => {
+      this.user = data;
+      this.maxVisible = Math.round(data.recommendedMovies.length/5 + 1);
+      this.scrollvalue = this.maxVisible + 1
+      if(data.recommendedMovies.length>0){
+        for (const recommended of data.recommendedMovies) {
+          this.movies.getMovie(recommended).subscribe((res)=>{
+            this.recMovies.push(res);
+            this.recMovies.push(res);
+            // this.recMovies.push(res);
+            // this.recMovies.push(res);
+            // this.recMovies.push(res);
+            // this.recMovies.push(res);
+            // this.recMovies.push(res);
+            // this.recMovies.push(res);
+            // this.recMovies.push(res);
+            // this.recMovies.push(res);
+            // this.recMovies.push(res);
+            // this.recMovies.push(res);
+            // this.recMovies.push(res);
+            // this.recMovies.push(res);
+            // this.recMovies.push(res);
+            // this.recMovies.push(res);
+            // this.recMovies.push(res);
+            // this.recMovies.push(res);
+            // this.recMovies.push(res);
+            // this.recMovies.push(res);
+
+          });
+        }
+        this.hasRecommendations = true;
+      }
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.userSub.unsubscribe();
   }
 
 }

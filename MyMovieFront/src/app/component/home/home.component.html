@@ -12,7 +12,7 @@
 
     <app-skeleton *ngIf="loader" ></app-skeleton>
     <p-carousel [value]="nowPlaying" [numVisible]="5" [numScroll]="4" [circular]="true" *ngIf="!loader"
-        [responsiveOptions]="responsiveOptions" >
+        [responsiveOptions]="responsiveOptions" [autoplayInterval]="5000" >
         <ng-template let-movie  pTemplate="item" height="auto">
             <div class="listing-item-style" [routerLink]="['/movies/', movie.id]" >
                 <div class="overlay">

@@ -127,7 +127,7 @@
             <div class="listing__head">
               <h2 class="listing__title">Cast</h2>
             </div>
-            <p-carousel [value]="casts" [numVisible]="6" [numScroll]="4" [circular]="false"
+            <p-carousel [value]="casts" [numVisible]="6" [numScroll]="4" [circular]="true"
                         [responsiveOptions]="responsiveOptions">
               <ng-template let-cast pTemplate="item">
                 <div class="listing-item-style" [routerLink]="['/person/', cast.id]">

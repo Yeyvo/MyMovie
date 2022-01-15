@@ -75,6 +75,7 @@ export class AuthService {
     const provider = new firebase.auth.GoogleAuthProvider();
     const credential = await this.afAuth.signInWithPopup(provider);
     // firebase.auth.fetchProvidersForEmail("emailaddress@gmail.com");
+    this.router.navigate(['/']);
     return this.updateUserData(credential.user);
 
   }
@@ -99,7 +100,8 @@ export class AuthService {
       uid: user.uid,
       email: user.email,
       displayName: user.displayName,
-      photoURL: user.photoURL
+      photoURL: user.photoURL,
+      recommendedMovies: []
     }
 
     const dataGeneral = {
@@ -155,6 +157,10 @@ export class AuthService {
     }).catch(err =>{
       console.log(err);
     });
+  }
+
+  async updateData(user: User) {
+    return (await this.afAuth.currentUser).updateProfile(user);
   }
 
 }

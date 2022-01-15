@@ -15,10 +15,15 @@
 }
 
 .mainView {
-  position: relative;
-  top: 70px;
+  min-height: calc(100vh - 41px - 70px);
 }
 
+@media (max-width: 1140px) {
+  .mainView {
+    position: relative;
+    top: 70px;
+  }
+}
 .all {
   display: flex;
   flex-direction: column;

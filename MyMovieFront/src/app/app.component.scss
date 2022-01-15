@@ -9,18 +9,26 @@
 .loading .mat-spinner {
   color: white;
   position: relative;
-  top:50%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.mainView{
-  position: relative;
-  top:70px;
+.mainView {
+  min-height: calc(100vh  - 41px - 70px);//- 70px
+
 }
 
-.all{
-  display:flex;
+
+@media (max-width: 1140px) {
+  .mainView {
+    position: relative;
+    top: 70px;
+  }
+}
+
+.all {
+  display: flex;
   flex-direction: column;
 }
 
