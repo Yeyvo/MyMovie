@@ -45,7 +45,7 @@ export class MoviesService {
     this.searchStr = searchStr;
     this.isSearching = true;
     this.emitIsMovieSearch();
-    console.log(`${this.baseUrl}search/movie?api_key=${this.apiKey}&query=${searchStr}`);
+    console.log(`${this.baseUrl}search/movie?api_key=${this.apiKey}&query=${searchStr}&page=${page}`);
     this.http.get(`${this.baseUrl}search/movie?api_key=${this.apiKey}&query=${searchStr}&page=${page}`).subscribe((res: any) => {
       this.searchRes = res.results;
       this.searchlength = res.total_results;
@@ -67,7 +67,7 @@ export class MoviesService {
 
   getTopRatedMovies(page: number): Observable<any> {
     console.log(`${this.baseUrl}movie/top_rated?api_key=${this.apiKey}&page=${page}&language=${this.language}&region=${this.region}`)
-    this.searchStr = "";
+
     this.isSearching = false;
     this.emitIsMovieSearch();
     this.searchRes = null;
@@ -76,7 +76,7 @@ export class MoviesService {
 
   getDiscoverMovies(): Observable<any> {
     this.isSearching = false;
-    return this.http.get(`${this.baseUrl}discover/movie?api_key=${this.apiKey}`);
+    return this.http.get(`${this.baseUrl}discover/movie?api_key=${this.apiKey}&sort_by=vote_average.desc`);
   }
 
   getGenres(): Observable<any> {
@@ -145,6 +145,7 @@ export class MoviesService {
     return this.http.get(`${this.baseUrl}person/${id}/movie_credits?api_key=${this.apiKey}`);
   }
   searchMoviesPage(page: number) {
+    console.log('search string : ' + this.searchStr)
     this.searchMovies(this.searchStr, page);
   }
 }

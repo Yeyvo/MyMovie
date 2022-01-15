@@ -4,9 +4,8 @@
         <h3 class="listing__title" *ngIf="searchRes">Search Movies</h3>
     </div>
 
-
+    <app-skeleton *ngIf="loader"></app-skeleton>
     <ng-container *ngIf="searchRes">
-        <app-skeleton *ngIf="loader"></app-skeleton>
         <div class="row" *ngIf="!loader">
             <div class="col-md-2 listing__items" *ngFor="let movie of searchRes | slice:0:18">
                 <div [routerLink]="['/movies/', movie.id]">
@@ -29,7 +28,7 @@
     </ng-container>
 
   <ng-container *ngIf="!searchRes">
-    <app-skeleton *ngIf="loader"></app-skeleton>
+<!--    <app-skeleton *ngIf="loader"></app-skeleton>-->
     <div class="row" *ngIf="!loader">
         <div class="col-md-2 listing__items" *ngFor="let movie of topRated | slice:0:18">
             <div [routerLink]="['/movies/', movie.id]">

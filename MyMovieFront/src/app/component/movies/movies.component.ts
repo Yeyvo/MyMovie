@@ -19,6 +19,7 @@ export class MoviesComponent implements OnInit, OnDestroy {
   searchRes: any = null;
   isSearching: boolean = false;
 
+
   moviesSearchSubscription: Subscription;
   isMoviesSearchSubscription: Subscription;
   constructor(private movieService: MoviesService) {
@@ -42,22 +43,23 @@ export class MoviesComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    // if (!this.isSearching) {
-      //this.getTopRatedMovies(1);
-      this.getMovies();
-    // }
+    if (!this.isSearching) {
+      this.getTopRatedMovies(1);
+      // this.getMovies();
+    }
     this.moviesSearchSubscription = this.movieService.moviesSearchSubject.subscribe(
       (movieSearchResult) => {
         this.searchRes = movieSearchResult;
+        // console.log('result !: ', movieSearchResult)
+        this.loader = false;
         this.topRated = null;
         this.totalResults = this.movieService.searchlength;
-        this.loader = false;
         this.isSearching = true;
       }
     );
     this.movieService.emitMovieSearch();
     this.isMoviesSearchSubscription = this.movieService.isMoviesSearchSubject.subscribe((res) => {
-      this.isSearching = res
+      this.isSearching = res;
     });
     this.movieService.emitIsMovieSearch();
   }
@@ -72,6 +74,7 @@ export class MoviesComponent implements OnInit, OnDestroy {
   }
 
   changePage(event) {
+    // console.log()
     this.loader = true;
     if (this.isSearching) {
       this.movieService.searchMoviesPage(event.pageIndex + 1);
@@ -94,6 +97,7 @@ export class MoviesComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.moviesSearchSubscription.unsubscribe();
+    this.isMoviesSearchSubscription.unsubscribe();
   }
 
 

@@ -10,8 +10,8 @@
   top: 0;
 }
 nav {
-  position: fixed;
-  z-index: 999;
+  //position: fixed;
+  //z-index: 999;
   width: 100%;
   top: 0;
   transition: top 0.3s;
@@ -199,7 +199,14 @@ nav {
 
 @media (max-width: 1140px) {
   nav {
-    padding: 0px;
+
+      position: fixed;
+      z-index: 999;
+      //width: 100%;
+      //top: 0;
+      //transition: top 0.3s;
+
+      padding: 0px;
 
     .logo {
       flex: 2;

@@ -11,23 +11,25 @@ import { FormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
+import {InputSwitchModule} from "primeng/inputswitch";
 
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MoviesRoutingModule,
-    PipeModule,
-    CarouselModule,
-    SkeletonModule,
-    ScrollingModule,
-    MatPaginatorModule,
-    FormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatIconModule
-  ],
+    imports: [
+        CommonModule,
+        MoviesRoutingModule,
+        PipeModule,
+        CarouselModule,
+        SkeletonModule,
+        ScrollingModule,
+        MatPaginatorModule,
+        FormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatIconModule,
+        InputSwitchModule
+    ],
   declarations: [
     MoviesComponent,
   ]
