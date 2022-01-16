@@ -96,7 +96,7 @@
                   </li>
                   <li *ngIf="movieGeneratedGenre.length">
                     <div class="label">
-                      GeneratedGenre
+                      CNN_Genre
                     </div>
                     <div class="comma_" *ngFor="let genre of movieGeneratedGenre">
                       <a routerLink="/genres/{{genre.id}}/{{genre.name}}">{{ genre?.name }} ({{genre?.confidence}})</a>

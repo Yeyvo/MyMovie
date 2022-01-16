@@ -46,26 +46,6 @@ export class ProfileComponent implements OnInit,OnDestroy {
         for (const recommended of data.recommendedMovies) {
           this.movies.getMovie(recommended).subscribe((res)=>{
             this.recMovies.push(res);
-            this.recMovies.push(res);
-            // this.recMovies.push(res);
-            // this.recMovies.push(res);
-            // this.recMovies.push(res);
-            // this.recMovies.push(res);
-            // this.recMovies.push(res);
-            // this.recMovies.push(res);
-            // this.recMovies.push(res);
-            // this.recMovies.push(res);
-            // this.recMovies.push(res);
-            // this.recMovies.push(res);
-            // this.recMovies.push(res);
-            // this.recMovies.push(res);
-            // this.recMovies.push(res);
-            // this.recMovies.push(res);
-            // this.recMovies.push(res);
-            // this.recMovies.push(res);
-            // this.recMovies.push(res);
-            // this.recMovies.push(res);
-
           });
         }
         this.hasRecommendations = true;

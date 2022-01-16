@@ -46,3 +46,6 @@ backend/__pycache__/CNNCategorisation.cpython-38.pyc
 *.png
 *.tmp
 *.h5
+*.csv
+*.pyc
+*.csv

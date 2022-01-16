@@ -10,18 +10,14 @@
 # tree handles this case.
 
 from __future__ import print_function
+from subprocess import CREATE_NEW_CONSOLE
 import pandas as pd
+import pickle
+import os
 
-df = pd.read_csv (r'C:\Users\hp\Desktop\my docs\2 eme Année\My S3 S4 Docs\PI S3\new-movies.csv',delimiter=',')  
-
-#training_data = [[row[col] for col in df.columns] for row in df.to_dict('records')]
-# Column labels.
-# These are used only to print the tree.
+recomendationTreeFilePath = 'decisionTree.data'
 
 
-training_data = [list(row) for row in df.values]
-
-header = list(df.columns)
 
 def unique_vals(rows, col):
     """Find the unique values for a column in a dataset."""
@@ -49,14 +45,16 @@ class Question:
     question. See the demo below.
     """
 
-    def __init__(self, column, value):
+    def __init__(self, column, value, header):
         self.column = column
         self.value = value
+        self.header = header
 
     def match(self, example):
         # Compare the feature value in an example to the
         # feature value in this question.
         val = example[self.column]
+        # print("####",val,"####")
         if is_numeric(val):
             return val >= self.value
         else:
@@ -69,7 +67,7 @@ class Question:
         if is_numeric(self.value):
             condition = ">="
         return "Is %s %s %s?" % (
-            header[self.column], condition, str(self.value))
+            self.header[self.column], condition, str(self.value))
 
 def partition(rows, question):
     """Partitions a dataset.
@@ -108,7 +106,7 @@ def info_gain(left, right, current_uncertainty):
     p = float(len(left)) / (len(left) + len(right))
     return current_uncertainty - p * gini(left) - (1 - p) * gini(right)
 
-def find_best_split(rows):
+def find_best_split(rows, header):
     """Find the best question to ask by iterating over every feature / value
     and calculating the information gain."""
     best_gain = 0  # keep track of the best information gain
@@ -122,7 +120,7 @@ def find_best_split(rows):
 
         for val in values:  # for each value
 
-            question = Question(col, val)
+            question = Question(col, val, header)
 
             # try splitting the dataset
             true_rows, false_rows = partition(rows, question)
@@ -167,7 +165,7 @@ class Decision_Node:
         self.question = question
         self.true_branch = true_branch
         self.false_branch = false_branch
-def build_tree(rows):
+def build_tree(rows, header):
     """Builds the tree.
 
     Rules of recursion: 1) Believe that it works. 2) Start by checking
@@ -178,7 +176,7 @@ def build_tree(rows):
     # Try partitioing the dataset on each of the unique attribute,
     # calculate the information gain,
     # and return the question that produces the highest gain.
-    gain, question = find_best_split(rows)
+    gain, question = find_best_split(rows, header)
 
     # Base case: no further info gain
     # Since we can ask no further questions,
@@ -191,9 +189,9 @@ def build_tree(rows):
     true_rows, false_rows = partition(rows, question)
     
     # Recursively build the true branch.
-    true_branch = build_tree(true_rows)
+    true_branch = build_tree(true_rows, header)
     # Recursively build the false branch.
-    false_branch = build_tree(false_rows)
+    false_branch = build_tree(false_rows, header)
     
     
 
@@ -223,29 +221,24 @@ def print_tree(node, spacing=""):
     print (spacing + '--> False:')
     print_tree(node.false_branch, spacing + "  ")
     
-my_tree = build_tree(training_data)
-print_tree(my_tree)
 
-
-
-def printTree(node):
+def createTreeDict(node):
     L = {}
     #print(L[0], end = '')
     if isinstance(node, Leaf) :
-        L["The recommendation"]=node.predictions
+        L["recommendation"]=  node.predictions
         L["true_branch"]={}
         L["false_branch"]={}
-        print(L)
+        # print(L)
         return L
     else:
-        L["Question"]=node.question
-        L["true_branch"]=printTree(node.true_branch)
-        L["false_branch"]=printTree(node.false_branch)
-        print(L)
+        L["Question"]=node.question.__repr__() 
+        L["true_branch"]=createTreeDict(node.true_branch)
+        L["false_branch"]=createTreeDict(node.false_branch)
+        # print(L)
         return L
     
 
-#printTree(my_tree)
 
 def classify(row, node):
     """See the 'rules of recursion' above."""
@@ -286,3 +279,28 @@ for row in testing_data:
     print ("Actual: %s. Predicted: %s" %
            (row[-1], print_leaf(classify(row, my_tree))))
 """
+
+def getModel():
+    if ( not os.path.exists(recomendationTreeFilePath)) :
+        df = pd.read_csv('RecommendationDataset/new-movies.csv',delimiter=',')  
+        #training_data = [[row[col] for col in df.columns] for row in df.to_dict('records')]
+        # Column labels.
+        # These are used only to print the tree.
+
+
+        training_data = [list(row) for row in df.values]
+        # print(training_data)
+        header = list(df.columns)
+        my_tree = build_tree(training_data, header)
+        dict = createTreeDict(my_tree)
+
+        decisionTreeFile = open(recomendationTreeFilePath,"wb")
+        pickle.dump(dict,decisionTreeFile)
+        return dict
+    else :
+        # df = pd.read_csv('RecommendationDataset/new-movies.csv',delimiter=',')
+        # header = list(df.columns)        
+        decisionTreeFile = open(recomendationTreeFilePath, 'rb')
+        Tree = pickle.load(decisionTreeFile)
+        decisionTreeFile.close()
+        return Tree

@@ -12,6 +12,7 @@ export class MovieRecommendationService {
   constructor(private httpClient : HttpClient) { }
 
   getRecomendation(): Observable<any>{
+    console.log(this.urlBase+"/recomendation")
     return this.httpClient.get(this.urlBase+"/recomendation");
   }
 }
