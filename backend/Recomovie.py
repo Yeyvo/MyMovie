@@ -11,6 +11,7 @@
 
 from __future__ import print_function
 from subprocess import CREATE_NEW_CONSOLE
+from numpy import math
 import pandas as pd
 import pickle
 import os
@@ -63,11 +64,11 @@ class Question:
     def __repr__(self):
         # This is just a helper method to print
         # the question in a readable format.
-        condition = "=="
+        condition = "is"
         if is_numeric(self.value):
-            condition = ">="
-        return "Is %s %s %s?" % (
-            self.header[self.column], condition, str(self.value))
+            condition = "More or equal"
+        return "%s?" % (
+            enhancedQuestionHeader(self.header[self.column], condition, str(self.value)))
 
 def partition(rows, question):
     """Partitions a dataset.
@@ -263,6 +264,23 @@ def print_leaf(counts):
         probs[lbl] = str(int(counts[lbl] / total * 100)) + "%"
     return probs
 
+def enhancedQuestionHeader(headerName, cond, value):
+    if(headerName == 'rating'):
+        return "do you think that the movie should be rated " + value
+    elif(headerName == 'genre'):
+        return "do you think that it should be an " + value + "movie"
+    elif(headerName == 'year'):
+        return "do you think that it should have been produced after or in" + (value)
+    elif(headerName == 'director'):
+        return "do you think that the movie director should be " + value
+    elif(headerName == 'star'):
+        return "do you think that "+value + " has starred in the movie "
+    elif(headerName == 'company'):
+        return "do you think that the production company should be " + value
+    elif(headerName == 'runtime'):
+        return "do you think that the movie runtime should be more than " + round(value) + " minutes"
+
+    
 
 
 

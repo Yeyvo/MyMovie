@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MovieRecommendationService} from "../../services/MovieRecommendation.service";
 import {MoviesService} from "../../services/movies.service";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-recommendation',
@@ -31,7 +32,7 @@ export class RecommendationComponent implements OnInit {
   ];
   loader:boolean=true;
 
-  constructor(public RecommendationEngine: MovieRecommendationService, public movies:MoviesService) {
+  constructor(public RecommendationEngine: MovieRecommendationService, public movies:MoviesService, private auth:AuthService) {
 
   }
 
@@ -45,14 +46,12 @@ export class RecommendationComponent implements OnInit {
 
   clickTrue() {
     this.recommendationTree = this.recommendationTree.true_branch;
-
     this.found();
   }
 
   clickFalse() {
     this.recommendationTree = this.recommendationTree.false_branch;
     this.found();
-    console.log(this.recommendationTree.recommendation)
   }
 
   found(){
@@ -61,6 +60,10 @@ export class RecommendationComponent implements OnInit {
         this.recomendMovies = res;
         this.isResult = true;
       })
+      if(this.auth.isAuth){
+        // console.log('saving reco')
+        this.auth.addRecommendation(this.recommendationTree.recommendation);
+      }
 
     }
   }

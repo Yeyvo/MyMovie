@@ -14,10 +14,10 @@ import {doc} from "@angular/fire/firestore";
 export class AuthService {
 
   defaultImageUrl: string = "https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg";
-  user$: Observable<User >; //database record , user document
+  user$: Observable<User>; //database record , user document
   isAuth: boolean = false;
 
-  authSubject : Subject<boolean> = new Subject<boolean>();
+  authSubject: Subject<boolean> = new Subject<boolean>();
 
   // userDataSubject : Subject<User> = new Subject<User>();
   // user : User;
@@ -49,12 +49,12 @@ export class AuthService {
     });
   }
 
-  createNewUserEmailPass(username : string , email: string, password: string) {
+  createNewUserEmailPass(username: string, email: string, password: string) {
     return new Promise((resolve, reject) => {
       this.afAuth.createUserWithEmailAndPassword(email, password)
         .then(
           (userCredential) => {
-            let userData :  User = {
+            let userData: User = {
               uid: userCredential.user.uid,
               email: userCredential.user.email,
               displayName: username,
@@ -82,7 +82,7 @@ export class AuthService {
 
   signInUser(email: string, password: string) {
     return new Promise((resolve, reject) => {
-      this.afAuth.signInWithEmailAndPassword( email, password).then((val) => {
+      this.afAuth.signInWithEmailAndPassword(email, password).then((val) => {
         resolve(val);
       }).catch((err) => {
         reject(err);
@@ -107,7 +107,8 @@ export class AuthService {
     const dataGeneral = {
       uid: user.uid,
       email: user.email,
-      photoURL: user.photoURL
+      photoURL: user.photoURL,
+      recommendedMovies: user.recommendedMovies
     }
 
     // firebase.auth().fetchSignInMethodsForEmail(user.email)
@@ -146,7 +147,7 @@ export class AuthService {
   // }
 
 
-  getUserData(){
+  getUserData() {
     // const docRef = doc( `users/${user.uid}`);
 
   }
@@ -154,7 +155,7 @@ export class AuthService {
   sendResetEmail(email: string) {
     this.afAuth.sendPasswordResetEmail(email).then(r => {
       console.log(" Sent ")
-    }).catch(err =>{
+    }).catch(err => {
       console.log(err);
     });
   }
@@ -163,4 +164,21 @@ export class AuthService {
     return (await this.afAuth.currentUser).updateProfile(user);
   }
 
+  addRecommendation(recommendation: number) {
+
+    let a = this.user$.subscribe((r: User) => {
+      r.recommendedMovies.push(String(recommendation));
+      this.updateUserData(r).then(() => {
+        // console.log('successfuly added recomendation')
+        // console.log(r);
+
+      }).catch((err) => {
+        console.log(err)
+      });
+      // console.log('trying to add recomendation')
+      // console.log(r);
+      a.unsubscribe();
+    });
+    // this.updateData(r)
+  }
 }

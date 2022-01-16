@@ -39,8 +39,14 @@ if __name__ == "__main__":
     if os.path.exists(imgFolderCacheName) :
         shutil.rmtree(imgFolderCacheName)
     os.makedirs(imgFolderCacheName)
-        
+    
+    print("\nCNN Model Importation\n")    
     model = cnnCateg.getModel()
+    print("\nCNN Model Importation Done\n")    
+
+    print("\nDecision Model Importation\n")    
     Tree = treeReco.getModel()
+    print("\nDecision Model Importation Done\n")    
+
     app.run( debug=True, port=4996)
     # app.run(host="0.0.0.0", port=8080, debug=True)

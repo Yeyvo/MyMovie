@@ -54,4 +54,16 @@ def UpdateDataset():
 
 
 
-UpdateDataset()
+# UpdateDataset()
+
+def dropCol():
+    # if not os.path.exists(imgFolderCacheName):
+    #     os.makedirs(imgFolderCacheName)
+
+
+
+    df = pd.read_csv("new-movies.csv")
+    df.drop('name',axis=1, inplace=True)
+    df.to_csv("new-movies.csv", index = False)
+
+# dropCol()

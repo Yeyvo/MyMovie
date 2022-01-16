@@ -50,4 +50,11 @@
   width: 100%;
 }
 
+.hover i.material-icons {
+  position: absolute;
+  top: 14%;
+  font-size: 20px;
+  left: 3%;
+}
+
 /*# sourceMappingURL=profile.component.css.map */

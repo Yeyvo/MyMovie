@@ -51,7 +51,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
     });
 
     this.userSub = this.auth.user$.subscribe((newUser) => {
-      this.user = newUser;
+      if(newUser !== null)
+        this.user = newUser;
     });
 
     var prevScrollpos = window.pageYOffset;

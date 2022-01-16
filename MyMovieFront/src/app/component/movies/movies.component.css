@@ -22,4 +22,11 @@ mat-paginator {
   border: #dc4666;
 }
 
+.hover i.material-icons {
+  position: absolute;
+  top: 14%;
+  font-size: 20px;
+  left: 3%;
+}
+
 /*# sourceMappingURL=movies.component.css.map */

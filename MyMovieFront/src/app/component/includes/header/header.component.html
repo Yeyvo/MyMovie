@@ -57,7 +57,7 @@
       <fa-icon [icon]="faSearch"></fa-icon>
     </button>
   </form>
-  <div *ngIf="isAuth" id="profile" class="" (click)="onClickCancelBtnMenu()">
+  <div *ngIf="isAuth && user !==  undefined" id="profile" class="" (click)="onClickCancelBtnMenu()">
     <!--    <div class="profileWrapper" (click)="this.profileActive = !this.profileActive">-->
     <div class=" profileWrapper d-flex flex-row align-items-center" (click)="this.profileActive = !this.profileActive">
       <p class="align-self-center" style="font-size: 100%">{{user.displayName | slice : 0: 10 }}</p>

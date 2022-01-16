@@ -33,6 +33,7 @@ export class ProfileComponent implements OnInit,OnDestroy {
   hasRecommendations: boolean = false;
   scrollvalue: number;
   maxVisible: number;
+  loader: boolean = true;
 
 
   constructor(public userAuth : AuthService,public movies : MoviesService) { }
@@ -42,12 +43,26 @@ export class ProfileComponent implements OnInit,OnDestroy {
       this.user = data;
       this.maxVisible = Math.round(data.recommendedMovies.length/5 + 1);
       this.scrollvalue = this.maxVisible + 1
-      if(data.recommendedMovies.length>0){
+      let len = data.recommendedMovies.length;
+      console.log('recomended movies : ', data.recommendedMovies)
+      if(len>0){
+        let factor = 1
+        switch (len) {
+          case 1:
+            factor = 4;
+            break;
+          case 2:
+            factor = 2
+            break;
+        }
         for (const recommended of data.recommendedMovies) {
           this.movies.getMovie(recommended).subscribe((res)=>{
-            this.recMovies.push(res);
+            for (let i = 0; i < factor; i++) {
+              this.recMovies.push(res);
+            }
           });
         }
+        this.loader = false;
         this.hasRecommendations = true;
       }
     });
