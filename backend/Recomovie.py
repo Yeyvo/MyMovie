@@ -26,11 +26,13 @@ def unique_vals(rows, col):
 
 def class_counts(rows):
     """Counts the number of each type of example in a dataset."""
-      # a dictionary of label -> count.
+    counts = {}  # a dictionary of label -> count.
     for row in rows:
-        # in our dataset format, the label is always the first column
-        counts = row[1]
-        
+        # in our dataset format, the label is always the last column
+        label = row[0]
+        if label not in counts:
+            counts[label] = 0
+        counts[label] += 1
     return counts
 
 def is_numeric(value):
@@ -67,7 +69,7 @@ class Question:
         condition = "is"
         if is_numeric(self.value):
             condition = "More or equal"
-        return "%s?" % (
+        return "%s ?" % (
             enhancedQuestionHeader(self.header[self.column], condition, str(self.value)))
 
 def partition(rows, question):
@@ -94,7 +96,7 @@ def gini(rows):
     counts = class_counts(rows)
     impurity = 1
     for lbl in counts:
-        prob_of_lbl = 1 / float(len(rows))
+        prob_of_lbl = counts[lbl] / float(len(rows))
         impurity -= prob_of_lbl**2
     return impurity
 
@@ -115,12 +117,11 @@ def find_best_split(rows, header):
     current_uncertainty = gini(rows)
     n_features = len(rows[0]) - 1  # number of columns
 
-    for col in range(n_features):  # for each feature
+    for col in range(1,n_features):  # for each feature != id
 
         values = set([row[col] for row in rows])  # unique values in the column
 
         for val in values:  # for each value
-
             question = Question(col, val, header)
 
             # try splitting the dataset
@@ -150,9 +151,8 @@ class Leaf:
     """
 
     def __init__(self, rows):
-        for row in rows:
-            if row[1] == class_counts(rows) :
-                self.predictions = row[0]
+        for key, value in class_counts(rows).items():
+            self.predictions = key
 class Decision_Node:
     """A Decision Node asks a question.
 
@@ -268,9 +268,9 @@ def enhancedQuestionHeader(headerName, cond, value):
     if(headerName == 'rating'):
         return "do you think that the movie should be rated " + value
     elif(headerName == 'genre'):
-        return "do you think that it should be an " + value + "movie"
+        return "do you think that it should be an " + value + " movie"
     elif(headerName == 'year'):
-        return "do you think that it should have been produced after or in" + (value)
+        return "do you think that it should have been produced after or in " + (value)
     elif(headerName == 'director'):
         return "do you think that the movie director should be " + value
     elif(headerName == 'star'):
@@ -279,6 +279,7 @@ def enhancedQuestionHeader(headerName, cond, value):
         return "do you think that the production company should be " + value
     elif(headerName == 'runtime'):
         return "do you think that the movie runtime should be more than " + round(value) + " minutes"
+    return 'ERROR ('+headerName+') ' + value
 
     
 
