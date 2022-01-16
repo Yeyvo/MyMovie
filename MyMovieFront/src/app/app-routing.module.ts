@@ -6,6 +6,7 @@ import {SigninComponent} from "./component/auth/signin/signin.component";
 import {ProfileComponent} from "./component/profile/profile.component";
 import {FourOhFourComponent} from "./component/four-oh-four/four-oh-four.component";
 import {RecommendationComponent} from "./component/recommendation/recommendation.component";
+import {AuthGuard} from "@angular/fire/auth-guard";
 
 const routes: Routes = [{
   path: '',
@@ -41,13 +42,13 @@ const routes: Routes = [{
     loadChildren: () => import('./component/person/person.module').then(mod => mod.PersonModule)
   },
   {
-    path: 'auth/signup', component: SignupComponent
+    path: 'auth/signup', component: SignupComponent , // canActivate: [AuthGuard]
   },
   {
     path: 'auth/signin', component: SigninComponent
   },
   {
-    path: 'auth/profile', component: ProfileComponent
+    path: 'auth/profile', component: ProfileComponent ,  //canActivate: [AuthGuard]
   },
   {
     path: 'not-found', component: FourOhFourComponent

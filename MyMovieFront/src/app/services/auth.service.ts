@@ -167,7 +167,10 @@ export class AuthService {
   addRecommendation(recommendation: number) {
 
     let a = this.user$.subscribe((r: User) => {
-      r.recommendedMovies.push(String(recommendation));
+
+      if (r.recommendedMovies.indexOf(String(recommendation)) === -1) {
+        r.recommendedMovies.push(String(recommendation));
+      }
       this.updateUserData(r).then(() => {
         // console.log('successfuly added recomendation')
         // console.log(r);

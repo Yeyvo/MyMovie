@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AuthService} from "../../services/auth.service";
 import {User} from "../../models/User";
-import {Subscription} from "rxjs";
+import {forkJoin, Subscription} from "rxjs";
 import {MoviesService} from "../../services/movies.service";
 
 @Component({
@@ -55,13 +55,18 @@ export class ProfileComponent implements OnInit,OnDestroy {
             factor = 2
             break;
         }
+
+        let obs  = []
         for (const recommended of data.recommendedMovies) {
-          this.movies.getMovie(recommended).subscribe((res)=>{
-            for (let i = 0; i < factor; i++) {
-              this.recMovies.push(res);
-            }
-          });
+          for (let i = 0; i < factor; i++) {
+            obs.push(this.movies.getMovie(recommended));
+          }
         }
+        forkJoin(obs).subscribe((res)=>{
+          this.recMovies = res;
+          this.hasRecommendations = true
+        })
+
         this.loader = false;
         this.hasRecommendations = true;
       }
