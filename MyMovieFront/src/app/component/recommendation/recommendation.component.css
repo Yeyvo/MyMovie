@@ -23,12 +23,16 @@
   display: flex;
   gap: 10vw;
 }
-
-.hover i.material-icons {
+.recommendation .hover i.material-icons {
   position: absolute;
   top: 14%;
   font-size: 20px;
   left: 3%;
+}
+.recommendation .hover p {
+  position: relative;
+  top: -50%;
+  font-size: 20px;
 }
 
 /*# sourceMappingURL=recommendation.component.css.map */

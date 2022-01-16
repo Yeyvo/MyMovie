@@ -2,14 +2,13 @@
   <app-skeleton *ngIf="loader" ></app-skeleton>
   <div class="recommendation" *ngIf="!isResult && !loader">
       <p>{{recommendationTree?.Question}}</p>
-<!--    <p>didihehihe shkdhfdh bdsjodshosdf sdfofosdhofdhs sdfhodhohfsdo sdofdjojdsf dsohofhosdhofh sdhdfhod ?</p>-->
 
     <div class="btnWrapper">
       <span class="btn btnGlow" (click)="clickTrue()">TRUE</span>
       <span class="btn btnGlow" (click)="clickFalse()">FALSE</span>
     </div>
   </div>
-  <div class="recommendation" *ngIf="isResult">
+  <div class="recommendation" *ngIf="isResult && !loader">
     <div class="listing-space mt-20 mb-5">
       <div class="listing__head">
         <h2 class="listing__title">Recommended Movies</h2>
@@ -17,7 +16,7 @@
 
           <div class="listing-item-style" [routerLink]="['/movies/', recomendMovies.id]">
             <div class="overlay">
-              <div class="hover"><i class="material-icons">play_arrow</i> PLAY NOW</div>
+              <div class="hover"><i class="material-icons">play_arrow</i> <p> PLAY </p></div>
             </div>
             <img *ngIf="recomendMovies?.poster_path"
                  src="https://image.tmdb.org/t/p/w370_and_h556_bestv2/{{recomendMovies?.poster_path}}">
