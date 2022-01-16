@@ -1,0 +1,402 @@
+id,rating,genre,year,director,star,company,runtime
+203835,PG-13,Horror,2017,Franck Khalfoun,Jennifer Jason Leigh,Dimension Films,87.0
+422114,PG,Comedy,2017,Dallas Jenkins,Brett Dalton,Blumhouse Productions,91.0
+292280,PG-13,Drama,2017,Stacy Title,Douglas Smith,Huayi Brothers Media,96.0
+397567,Not Rated,Action,2017,Yong-hwa Kim,Ha Jung-woo,Dexter Studios,139.0
+447332,PG-13,Drama,2018,John Krasinski,Emily Blunt,Paramount Pictures,90.0
+299536,PG-13,Action,2018,Anthony Russo,Robert Downey Jr.,Marvel Studios,149.0
+383498,R,Action,2018,David Leitch,Ryan Reynolds,Twentieth Century Fox,119.0
+424694,PG-13,Biography,2018,Bryan Singer,Rami Malek,Twentieth Century Fox,134.0
+284054,PG-13,Action,2018,Ryan Coogler,Chadwick Boseman,Marvel Studios,134.0
+493922,R,Drama,2018,Ari Aster,Toni Collette,PalmStar Media,127.0
+484247,R,Comedy,2018,Paul Feig,Anna Kendrick,BRON Studios,117.0
+297802,PG-13,Action,2018,James Wan,Jason Momoa,Warner Bros.,143.0
+333339,PG-13,Action,2018,Steven Spielberg,Tye Sheridan,Warner Bros.,140.0
+324857,PG,Animation,2018,Bob Persichetti,Shameik Moore,Sony Pictures Entertainment (SPE),117.0
+353081,PG-13,Action,2018,Christopher McQuarrie,Tom Cruise,Paramount Pictures,147.0
+30789,R,Horror,1981,Piers Haggard,Klaus Kinski,Morison Film Group,92.0
+490132,PG-13,Biography,2018,Peter Farrelly,Viggo Mortensen,Participant,130.0
+455207,PG-13,Comedy,2018,Jon M. Chu,Constance Wu,Warner Bros.,120.0
+363088,PG-13,Action,2018,Peyton Reed,Paul Rudd,Marvel Studios,118.0
+487558,R,Biography,2018,Spike Lee,John David Washington,Focus Features,135.0
+346910,R,Action,2018,Shane Black,Boyd Holbrook,Twentieth Century Fox,107.0
+438808,R,Crime,2018,Yann Demange,Matthew McConaughey,LBI Productions,111.0
+348350,PG-13,Action,2018,Ron Howard,Alden Ehrenreich,Lucasfilm,135.0
+419478,PG-13,Drama,2018,Scott Speer,Bella Thorne,Boies / Schiller Film Group,91.0
+396461,R,Crime,2018,David Robert Mitchell,Andrew Garfield,Vendian Entertainment,139.0
+449443,R,Action,2018,Christian Gudegast,Gerard Butler,STX Films,140.0
+300668,R,Adventure,2018,Alex Garland,Natalie Portman,Paramount Pictures,115.0
+401981,R,Action,2018,Francis Lawrence,Jennifer Lawrence,Chernin Entertainment,140.0
+332562,R,Drama,2018,Bradley Cooper,Lady Gaga,Warner Bros. Pictures,136.0
+458423,PG-13,Comedy,2018,Ol Parker,Lily James,Universal Pictures,114.0
+395990,R,Action,2018,Eli Roth,Bruce Willis,Cave 76,107.0
+491418,PG-13,Comedy,2018,Sean Anders,Mark Wahlberg,Closest to the Hole Productions,118.0
+351286,PG-13,Action,2018,J.A. Bayona,Chris Pratt,Universal Pictures,128.0
+489925,R,Comedy,2018,Bo Burnham,Elsie Fisher,A24,93.0
+402900,PG-13,Action,2018,Gary Ross,Sandra Bullock,Warner Bros.,110.0
+361292,R,Fantasy,2018,Luca Guadagnino,Chloë Grace Moretz,Frenesy Film Company,152.0
+375262,R,Biography,2018,Yorgos Lanthimos,Olivia Colman,Fox Searchlight Pictures,119.0
+345940,PG-13,Action,2018,Jon Turteltaub,Jason Statham,Di Bonaventura Pictures,113.0
+460885,Not Rated,Horror,2018,Panos Cosmatos,Nicolas Cage,SpectreVision,121.0
+400535,R,Action,2018,Stefano Sollima,Benicio Del Toro,Columbia Pictures,122.0
+337167,R,Drama,2018,James Foley,Dakota Johnson,Perfect World Pictures,105.0
+2082,R,Horror,2007,Rob Zombie,Scout Taylor-Compton,Dimension Films,109.0
+260513,PG,Animation,2018,Brad Bird,Craig T. Nelson,Walt Disney Pictures,118.0
+442249,R,Action,2018,Gerard McMurray,Y'lan Noel,Blumhouse Productions,97.0
+398173,R,Crime,2018,Lars von Trier,Matt Dillon,Zentropa Entertainments,152.0
+428836,PG-13,Drama,2018,Claire McCarthy,Daisy Ridley,Covert Media,106.0
+439079,R,Horror,2018,Corin Hardy,Demián Bichir,Atomic Monster,96.0
+471859,R,Biography,2018,Mary Harron,Hannah Murray,Epic Level Entertainment,110.0
+345887,R,Action,2018,Antoine Fuqua,Denzel Washington,Columbia Pictures,121.0
+507076,R,Drama,2018,Gaspar Noé,Sofia Boutella,Rectangle Productions,97.0
+399035,PG-13,Action,2018,Jaume Collet-Serra,Liam Neeson,StudioCanal,104.0
+445571,R,Action,2018,John Francis Daley,Jason Bateman,Access Entertainment,100.0
+494974,R,Biography,2018,Trevor Nunn,Judi Dench,Trademark Films,101.0
+455980,R,Action,2018,Jeff Tomsic,Jeremy Renner,Broken Road Productions,100.0
+470044,PG-13,Crime,2018,George Tillman Jr.,Amandla Stenberg,Fox 2000 Pictures,133.0
+446021,R,Crime,2018,Drew Goddard,Jeff Bridges,Goddard Textiles,141.0
+399174,PG-13,Animation,2018,Wes Anderson,Bryan Cranston,Indian Paintbrush,101.0
+338952,PG-13,Adventure,2018,David Yates,Eddie Redmayne,Heyday Films,134.0
+399402,R,Action,2018,Donovan Marsh,Gerard Butler,Hunter Killer Productions,121.0
+504172,R,Crime,2018,Clint Eastwood,Clint Eastwood,Warner Bros.,116.0
+544431,Unrated,Crime,2018,Duncan Skiles,Dylan McDermott,End Cue,109.0
+20662,PG-13,Action,2010,Ridley Scott,Russell Crowe,Universal Pictures,140.0
+451915,R,Biography,2018,Felix van Groeningen,Steve Carell,Amazon Studios,120.0
+517814,R,Drama,2018,Nadine Labaki,Zain Al Rafeea,Mooz Films,126.0
+429300,PG-13,Action,2018,Baltasar Kormákur,Shailene Woodley,Huayi Brothers,96.0
+449176,PG-13,Comedy,2018,Greg Berlanti,Nick Robinson,Fox 2000 Pictures,110.0
+400650,PG,Comedy,2018,Rob Marshall,Emily Blunt,Lucamar Productions,130.0
+443463,PG,Adventure,2018,Debra Granik,Thomasin McKenzie,BRON Studios,109.0
+424783,PG-13,Action,2018,Travis Knight,Hailee Steinfeld,Hasbro,114.0
+429197,R,Biography,2018,Adam McKay,Christian Bale,Annapurna Pictures,132.0
+400155,PG,Animation,2018,Genndy Tartakovsky,Adam Sandler,Sony Pictures Animation,97.0
+347375,R,Action,2018,Peter Berg,Mark Wahlberg,STX Entertainment,94.0
+381719,PG,Animation,2018,Will Gluck,James Corden,Columbia Pictures,95.0
+429351,R,Action,2018,Nicolai Fuglsig,Chris Hemsworth,Alcon Entertainment,130.0
+454992,R,Action,2018,Susanna Fogel,Justin Theroux,BRON Studios,117.0
+500664,R,Action,2018,Leigh Whannell,Logan Marshall-Green,Goalpost Pictures,100.0
+457136,R,Biography,2018,Josie Rourke,Saoirse Ronan,Focus Features,124.0
+404368,PG,Animation,2018,Phil Johnston,John C. Reilly,Walt Disney Animation Studios,112.0
+438799,R,Action,2018,Julius Avery,Jovan Adepo,Bad Robot,110.0
+338970,PG-13,Action,2018,Roar Uthaug,Alicia Vikander,Warner Bros.,119.0
+446807,R,Action,2018,Fede Alvarez,Claire Foy,Columbia Pictures,115.0
+428078,PG-13,Action,2018,Christian Rivers,Hera Hilmar,Media Rights Capital (MRC),128.0
+336843,PG-13,Action,2018,Wes Ball,Dylan O'Brien,Gotham Group,143.0
+369972,PG-13,Biography,2018,Damien Chazelle,Ryan Gosling,Universal Pictures,141.0
+480530,PG-13,Drama,2018,Steven Caple Jr.,Michael B. Jordan,Metro-Goldwyn-Mayer (MGM),130.0
+99749,R,Drama,1987,William Friedkin,Michael Biehn,De Laurentiis Entertainment Group (DEG),97.0
+401545,R,Crime,2018,Asghar Farhadi,Penélope Cruz,Memento Films Production,133.0
+437586,R,Comedy,2018,Jonah Hill,Sunny Suljic,A24,85.0
+300681,PG-13,Drama,2018,Jeffrey Nachmanoff,Keanu Reeves,Company Films,107.0
+401469,R,Crime,2018,Steve McQueen,Viola Davis,New Regency Productions,129.0
+467240,Not Rated,Drama,2018,Chang-dong Lee,Yoo Ah-in,Pine House Film,148.0
+489999,PG-13,Drama,2018,Aneesh Chaganty,John Cho,Screen Gems,102.0
+446696,R,Drama,2018,Dan Fogelman,Oscar Isaac,FilmNation Entertainment,117.0
+437557,R,Comedy,2018,Kay Cannon,Leslie Mann,Point Grey Pictures,102.0
+371608,R,Horror,2018,Johannes Roberts,Christina Hendricks,Aviron Pictures,85.0
+458594,R,Action,2018,Pierre Morel,Jennifer Garner,STX Films,101.0
+376865,R,Adventure,2018,Claire Denis,Robert Pattinson,Alcatraz Films,113.0
+465136,PG-13,Drama,2018,Michael Sucsy,Angourie Rice,Likely Story,97.0
+493551,PG-13,Biography,2018,Chris Weitz,Oscar Isaac,Metro-Goldwyn-Mayer (MGM),122.0
+505192,R,Crime,2018,Hirokazu Koreeda,Lily Franky,AOI Promotion,121.0
+489930,R,Comedy,2018,Carlos López Estrada,Daveed Diggs,Snoot Entertainment,95.0
+440161,R,Crime,2018,Jacques Audiard,John C. Reilly,Why Not Productions,122.0
+400090,R,Adventure,2018,Jennifer Kent,Aisling Franciosi,Causeway Films,136.0
+471506,R,Drama,2018,Neil Jordan,Isabelle Huppert,Sidney Kimmel Entertainment,98.0
+460668,PG-13,Comedy,2018,Abby Kohn,Amy Schumer,Huayi Brothers Pictures,110.0
+406761,R,Action,2018,Drew Pearce,Jodie Foster,The Ink Factory,94.0
+439015,PG-13,Horror,2018,Sylvain White,Joey King,Screen Gems,93.0
+481880,R,Biography,2018,Edward Zwick,Jack O'Connell,Flashlight Films,127.0
+339976,R,Drama,2018,Jake Scott,Sienna Miller,Romulus Entertainment,111.0
+502682,PG-13,Comedy,2018,Bill Holderman,Diane Keaton,Apartment Story,104.0
+457943,R,Action,2018,Crispian Mills,Jassa Ahluwalia,Catalyst Global Media,104.0
+424781,R,Comedy,2018,Boots Riley,LaKeith Stanfield,Cinereach,112.0
+268896,PG-13,Action,2018,Steven S. DeKnight,John Boyega,Legendary Entertainment,111.0
+426563,PG-13,Comedy,2018,Etan Cohen,Will Ferrell,Columbia Pictures,90.0
+445651,PG-13,Action,2018,Jennifer Yuh Nelson,Amandla Stenberg,21 Laps Entertainment,104.0
+517104,R,Drama,2018,Pawel Pawlikowski,Joanna Kulig,Opus Film,89.0
+460019,PG-13,Horror,2018,Jeff Wadlow,Lucy Hale,Blumhouse Productions,100.0
+399360,PG-13,Action,2018,Albert Hughes,Kodi Smit-McPhee,Studio 8,96.0
+491472,PG-13,Biography,2018,Julian Schnabel,Willem Dafoe,CBS Films,111.0
+10780,PG,Comedy,1987,Garry Marshall,Goldie Hawn,Metro-Goldwyn-Mayer (MGM),112.0
+470229,Not Rated,Drama,2018,François Simard,Graham Verchere,Brightlight Pictures,105.0
+453755,PG-13,Adventure,2018,Joe Penna,Mads Mikkelsen,Armory Films,98.0
+407451,PG,Adventure,2018,Ava DuVernay,Storm Reid,Legend3D,109.0
+220882,R,Crime,2018,Mathew Cullen,Amber Heard,Muse Productions,118.0
+534780,Not Rated,Crime,2018,Sriram Raghavan,Ayushmann Khurrana,Matchbox Pictures,139.0
+416144,R,Action,2018,Anthony Maras,Dev Patel,India Take One Productions,123.0
+399796,PG-13,Comedy,2018,Ben Falcone,Melissa McCarthy,New Line Cinema,105.0
+489931,R,Biography,2018,Bart Layton,Spencer Reinhard,Film4,116.0
+463821,PG,Comedy,2018,Eli Roth,Jack Black,DreamWorks,105.0
+535845,PG-13,Biography,2018,Tom Shadyac,Aldis Hodge,ShivHans Pictures,99.0
+339103,R,Biography,2018,Kevin Connolly,John Travolta,Emmett/Furla/Oasis Films (EFO Films),112.0
+420814,PG,Adventure,2018,Marc Forster,Ewan McGregor,2DUX²,104.0
+471507,R,Action,2018,Karyn Kusama,Nicole Kidman,Annapurna Pictures,121.0
+411144,Not Rated,Drama,2018,Stacie Passon,Taissa Farmiga,Mighty Engine,90.0
+426613,Not Rated,Drama,2018,Desiree Akhavan,Chloë Grace Moretz,Beachside Films,91.0
+406563,PG-13,Horror,2018,Adam Robitel,Lin Shaye,Blumhouse Productions,103.0
+407439,R,Biography,2018,Garth Davis,Rooney Mara,See-Saw Films,120.0
+443009,R,Biography,2018,Gus Van Sant,Joaquin Phoenix,Amazon Studios,114.0
+401847,R,Biography,2018,Marielle Heller,Melissa McCarthy,Archer Gray,106.0
+467660,R,Drama,2018,Steven Soderbergh,Claire Foy,Fingerprint Releasing,98.0
+472451,R,Biography,2018,Joel Edgerton,Lucas Hedges,Focus Features,115.0
+463272,PG,Action,2018,David Kerr,Rowan Atkinson,Universal Pictures,89.0
+447200,PG-13,Action,2018,Rawson Marshall Thurber,Dwayne Johnson,Legendary Entertainment,102.0
+417812,PG-13,Drama,2018,Paul Dano,Ed Oxenbould,June Pictures,105.0
+429203,PG-13,Biography,2018,David Lowery,Robert Redford,Fox Searchlight Pictures,93.0
+417261,PG,Comedy,2018,Bethany Ashton Wolf,Alex Roe,LD Entertainment,108.0
+339380,PG-13,Biography,2018,Mimi Leder,Felicity Jones,Alibaba Pictures,120.0
+504253,Not Rated,Animation,2018,Shin'ichirô Ushijima,Mahiro Takasugi,ABC Animation,109.0
+297725,Not Rated,Adventure,2018,Terry Gilliam,José Luis Ferrer,Alacran Pictures,132.0
+467952,R,Biography,2018,Ben Lewin,Paul Rudd,PalmStar Media,94.0
+351044,PG-13,Biography,2018,Robert Zemeckis,Steve Carell,Universal Pictures,116.0
+467632,R,Crime,2018,Dean Devlin,David Tennant,Electric Entertainment,110.0
+897661,R,Crime,2018,Ali Abbasi,Eva Melander,Meta Film Stockholm,110.0
+340022,R,Action,2018,Nash Edgerton,Joel Edgerton,Amazon Studios,111.0
+446101,R,Action,2018,Sam Levinson,Odessa Young,BRON Studios,108.0
+505058,R,Horror,2018,Stephen Susco,Colin Woodell,Bazelevs Production,92.0
+426543,PG,Adventure,2018,Lasse Hallström,Mackenzie Foy,Walt Disney Pictures,99.0
+523773,R,Comedy,2018,Donald Petrie,Emma Roberts,Firsttake Entertainment,102.0
+412988,R,Action,2018,Brian Henson,Melissa McCarthy,STX Entertainment,91.0
+400579,R,Comedy,2018,Jason Reitman,Charlize Theron,BRON Studios,95.0
+54118,R,Horror,1981,Ken Hughes,Leonard Mann,Lorimar Productions,88.0
+426249,R,Biography,2018,Jonas Åkerlund,Rory Culkin,Proton Cinema,118.0
+446894,PG,Animation,2018,Karey Kirkpatrick,Channing Tatum,Warner Animation Group,96.0
+429476,R,Horror,2018,Gregory Plotkin,Cynthea Mercado,CBS Films,89.0
+475132,R,Biography,2018,Matthew Heineman,Rosamund Pike,Acacia Filmed Entertainment,110.0
+503616,PG-13,Comedy,2018,Peter Segal,Jennifer Lopez,Huayi Brothers,103.0
+474335,PG-13,Comedy,2018,Charles Stone III,Kyrie Irving,Summit Entertainment,103.0
+482981,R,Comedy,2018,Tom Harper,Jessie Buckley,BFI Film Fund,101.0
+434555,R,Horror,2018,Diederik Van Rooijen,Shay Mitchell,Screen Gems,86.0
+465914,R,Drama,2018,Barry Jenkins,KiKi Layne,Annapurna Pictures,119.0
+477016,Unrated,Crime,2018,Carol Morley,Mamie Gummer,Cannon and Morley Productions,109.0
+360920,PG,Animation,2018,Yarrow Cheney,Benedict Cumberbatch,Universal Pictures,85.0
+454652,R,Biography,2018,Wash Westmoreland,Keira Knightley,Number 9 Films,111.0
+416234,PG-13,Biography,2018,Michael Spierig,Helen Mirren,CBS Films,99.0
+453201,PG-13,Biography,2018,Clint Eastwood,Alek Skarlatos,Warner Bros.,94.0
+454283,R,Comedy,2018,Tim Kirkby,Johnny Knoxville,Paramount Pictures,85.0
+458344,R,Comedy,2018,Jesse Peretz,Chris O'Dowd,Los Angeles Media Fund (LAMF),97.0
+486947,R,Crime,2018,Gustav Möller,Jakob Cedergren,Nordisk Film / SPRING,85.0
+423612,R,Biography,2018,Florian Henckel von Donnersmarck,Tom Schilling,Pergamon Film,189.0
+429202,R,Drama,2018,Brady Corbet,Natalie Portman,Bold Films,114.0
+541560,R,Horror,2018,Emma Tammi,Caitlin Gerard,Soapbox Films,88.0
+50022,R,Comedy,2018,Jay Chandrasekhar,Jay Chandrasekhar,Votiv Films,99.0
+501630,Not Rated,Comedy,2018,Becca Gleason,Joey King,Big Cat Productions,95.0
+553882,R,Drama,2018,Joe Chappelle,Tika Sumpter,CorradoMooncoin,102.0
+291984,R,Drama,2018,Xavier Dolan,Kit Harington,Lyla Films,123.0
+499319,Not Rated,Comedy,2018,Miguel Arteta,Alia Shawkat,Duplass Brothers Productions,93.0
+10144,G,Animation,1989,Ron Clements,Jodi Benson,Walt Disney Pictures,83.0
+432527,Not Rated,Drama,2018,Sanjay Leela Bhansali,Deepika Padukone,Bhansali Productions,164.0
+394741,PG,Biography,2018,Jon S. Baird,Steve Coogan,Entertainment One,98.0
+500475,R,Action,2018,Director X.,Trevor Jackson,Columbia Pictures,116.0
+387592,PG,Animation,2018,Nick Park,Eddie Redmayne,Summit Entertainment,89.0
+470878,PG,Biography,2018,Andrew Erwin,J. Michael Finley,Kevin Downes Productions,110.0
+489243,R,Drama,2018,Kim Nguyen,Jesse Eisenberg,Item 7,111.0
+503314,PG,Animation,2018,Tatsuya Nagamine,Masako Nozawa,Toei Company,100.0
+491473,R,Comedy,2018,Sebastián Lelio,Julianne Moore,Fabula,102.0
+425505,PG-13,Action,2018,Jonathan Baker,Myles Truitt,Summit Entertainment,102.0
+496743,R,Drama,2018,Pella Kagerman,Emelie Garbers,Film Capital Stockholm,106.0
+442062,PG,Animation,2018,Ari Sandel,Wendi McLendon-Covey,Sony Pictures Animation,90.0
+416194,PG-13,Action,2018,John Andreas Andersen,Kristoffer Joner,Fantefilm,106.0
+65326,PG-13,Comedy,1986,Evelyn Purcell,Rosanna Arquette,Island Pictures,107.0
+433627,PG-13,Action,2018,José Padilha,Batsheva Dance Company,Participant,107.0
+505262,PG-13,Animation,2018,Kenji Nagasaki,Daiki Yamashita,Bones,96.0
+534338,Unrated,Drama,2018,Perry Lang,David Strathairn,Astute Films,97.0
+530385,R,Drama,2019,Ari Aster,Florence Pugh,A24,148.0
+466272,R,Comedy,2019,Quentin Tarantino,Leonardo DiCaprio,Columbia Pictures,161.0
+299534,PG-13,Action,2019,Anthony Russo,Robert Downey Jr.,Marvel Studios,181.0
+445629,PG-13,Biography,2019,Stephen Merchant,Dwayne Johnson,Metro-Goldwyn-Mayer (MGM),108.0
+9587,PG,Drama,1994,Gillian Armstrong,Susan Sarandon,Columbia Pictures,115.0
+522681,PG-13,Action,2019,Adam Robitel,Taylor Russell,Columbia Pictures,99.0
+535581,R,Comedy,2019,Jim Jarmusch,Bill Murray,Focus Features,104.0
+475557,R,Crime,2019,Todd Phillips,Joaquin Phoenix,Warner Bros.,122.0
+515195,PG-13,Comedy,2019,Danny Boyle,Himesh Patel,Decibel Films,116.0
+48311,R,Horror,1982,Charles Band,Robert Glaudini,Embassy Pictures,85.0
+458156,R,Action,2019,Chad Stahelski,Keanu Reeves,Lionsgate,130.0
+546554,PG-13,Comedy,2019,Rian Johnson,Daniel Craig,Lionsgate,130.0
+384018,PG-13,Action,2019,David Leitch,Dwayne Johnson,Chris Morgan Productions,137.0
+299537,PG-13,Action,2019,Anna Boden,Brie Larson,Walt Disney Pictures,123.0
+537915,PG-13,Drama,2019,Jenny Gage,Josephine Langford,CalMaple,105.0
+429617,PG-13,Action,2019,Jon Watts,Tom Holland,Columbia Pictures,129.0
+515001,PG-13,Comedy,2019,Taika Waititi,Roman Griffin Davis,TSG Entertainment,108.0
+287947,PG-13,Action,2019,David F. Sandberg,Zachary Levi,Warner Bros.,132.0
+474350,R,Drama,2019,Andy Muschietti,Jessica Chastain,New Line Cinema,169.0
+530915,R,Drama,2019,Sam Mendes,Dean-Charles Chapman,Dreamworks Pictures,119.0
+181812,PG-13,Action,2019,J.J. Abrams,Daisy Ridley,Walt Disney Pictures,141.0
+359724,PG-13,Action,2019,James Mangold,Matt Damon,Chernin Entertainment,152.0
+398978,R,Biography,2019,Martin Scorsese,Robert De Niro,Tribeca Productions,209.0
+503919,R,Drama,2019,Robert Eggers,Robert Pattinson,A24,109.0
+512200,PG-13,Action,2019,Jake Kasdan,Dwayne Johnson,Columbia Pictures,123.0
+399579,PG-13,Action,2019,Robert Rodriguez,Rosa Salazar,Twentieth Century Fox,122.0
+458723,R,Horror,2019,Jordan Peele,Lupita Nyong'o,Monkeypaw Productions,116.0
+567609,R,Action,2019,Matt Bettinelli-Olpin,Samara Weaving,Fox Searchlight Pictures,95.0
+1487,PG-13,Action,2004,Guillermo del Toro,Ron Perlman,Revolution Studios,122.0
+290859,R,Action,2019,Tim Miller,Linda Hamilton,Paramount Pictures,128.0
+535544,PG,Drama,2019,Michael Engler,Stephen Campbell Moore,Carnival Film & Television,122.0
+453405,PG-13,Action,2019,Ang Lee,Will Smith,Skydance Media,117.0
+505600,R,Comedy,2019,Olivia Wilde,Kaitlyn Dever,Annapurna Pictures,102.0
+499701,PG,Adventure,2019,James Bobin,Isabela Merced,Paramount Players,102.0
+450465,PG-13,Drama,2019,M. Night Shyamalan,James McAvoy,Buena Vista International,129.0
+458131,PG-13,Biography,2019,Robin Bissell,Taraji P. Henson,Astute Films,133.0
+393624,R,Biography,2019,Gavin Hood,Keira Knightley,Entertainment One,112.0
+8587,G,Animation,1994,Roger Allers,Matthew Broderick,Walt Disney Pictures,88.0
+812,G,Animation,1992,Ron Clements,Scott Weinger,Walt Disney Pictures,90.0
+492188,R,Comedy,2019,Noah Baumbach,Adam Driver,Heyday Films,137.0
+373571,PG-13,Action,2019,Michael Dougherty,Kyle Chandler,Warner Bros.,132.0
+504608,R,Biography,2019,Dexter Fletcher,Taron Egerton,Paramount Pictures,121.0
+540901,R,Comedy,2019,Lorene Scafaria,Constance Wu,Annapurna Pictures,110.0
+107285,PG-13,Drama,1987,Yurek Bogayevicz,Sally Kirkland,Magnus Films,100.0
+531428,R,Drama,2019,Céline Sciamma,Noémie Merlant,Lilies Films,122.0
+301528,G,Animation,2019,Josh Cooley,Tom Hanks,Pixar Animation Studios,100.0
+338967,R,Action,2019,Ruben Fleischer,Woody Harrelson,2.0 Entertainment,99.0
+459992,R,Comedy,2019,Jonathan Levine,Charlize Theron,Summit Entertainment,125.0
+423204,R,Action,2019,Ric Roman Waugh,Gerard Butler,Millennium Media,121.0
+479455,PG-13,Action,2019,F. Gary Gray,Chris Hemsworth,Columbia Pictures,114.0
+320288,PG-13,Action,2019,Simon Kinberg,James McAvoy,Twentieth Century Fox,113.0
+330457,PG,Animation,2019,Chris Buck,Kristen Bell,Walt Disney Animation Studios,103.0
+531309,R,Drama,2019,David Yarovesky,Elizabeth Banks,Screen Gems,90.0
+419704,PG-13,Adventure,2019,James Gray,Brad Pitt,New Regency Productions,123.0
+463257,PG-13,Adventure,2019,Tyler Nilson,Zack Gottsagen,Armory Films,97.0
+521777,R,Adventure,2019,Gene Stupnitsky,Jacob Tremblay,Universal Pictures,90.0
+502416,R,Horror,2019,Tate Taylor,Octavia Spencer,Blumhouse Productions,99.0
+527641,PG-13,Drama,2019,Justin Baldoni,Haley Lu Richardson,CBS Films,116.0
+438650,R,Action,2019,Hans Petter Moland,Liam Neeson,Summit Entertainment,119.0
+511987,R,Action,2019,Alexandre Aja,Kaya Scodelario,Paramount Pictures,87.0
+521029,R,Horror,2019,Gary Dauberman,Vera Farmiga,New Line Cinema,106.0
+522938,R,Action,2019,Adrian Grunberg,Sylvester Stallone,Lionsgate,89.0
+523172,R,Comedy,2019,Nisha Ganatra,Emma Thompson,3 Arts Entertainment,102.0
+2907,PG-13,Comedy,1991,Barry Sonnenfeld,Anjelica Huston,Orion Pictures,99.0
+472674,R,Drama,2019,John Crowley,Oakes Fegley,Amazon Studios,149.0
+501907,PG,Biography,2019,Marielle Heller,Tom Hanks,Big Beach Films,109.0
+166428,PG,Animation,2019,Dean DeBlois,Jay Baruchel,DreamWorks Animation,104.0
+447404,PG,Action,2019,Rob Letterman,Ryan Reynolds,Warner Bros.,104.0
+16320,PG-13,Action,2005,Joss Whedon,Nathan Fillion,Universal Pictures,119.0
+420809,PG,Adventure,2019,Joachim Rønning,Angelina Jolie,Walt Disney Pictures,119.0
+522039,R,Drama,2019,Joe Talbot,Jimmie Fails,A24,121.0
+412117,PG,Animation,2019,Chris Renaud,Patton Oswalt,Universal Pictures,86.0
+480414,R,Horror,2019,Michael Chaves,Linda Cardellini,New Line Cinema,93.0
+429471,PG-13,Action,2019,Rupert Wyatt,John Goodman,Participant,109.0
+417384,PG-13,Adventure,2019,André Øvredal,Zoe Margaret Colletti,CBS Films,108.0
+524247,PG-13,Thriller,2019,Deon Taylor,Michael Ealy,Screen Gems,102.0
+454640,PG,Animation,2019,Thurop Van Orman,Jason Sudeikis,Sony Pictures Animation,97.0
+487297,R,Comedy,2019,Adam Shankman,Taraji P. Henson,BET Films,117.0
+8913,R,Fantasy,1989,Mary Lambert,Dale Midkiff,Paramount Pictures,103.0
+480105,PG-13,Adventure,2019,Johannes Roberts,Sophie Nélisse,Entertainment Studios Motion Pictures,90.0
+480001,R,Action,2019,Riley Stearns,Jesse Eisenberg,End Cue,104.0
+512196,PG-13,Comedy,2019,Christopher Landon,Jessica Rothe,Blumhouse Productions,100.0
+568160,PG-13,Animation,2019,Makoto Shinkai,Kotaro Daigo,"""Weathering With You"" Film Partners",112.0
+4244,PG,Comedy,2000,Jon Turteltaub,Bruce Willis,Chester Films Inc.,104.0
+575942,R,Comedy,2019,Lynn Shelton,Marc Maron,Forager Films,88.0
+280217,PG,Animation,2019,Mike Mitchell,Chris Pratt,Warner Bros.,107.0
+10585,R,Fantasy,1988,Tom Holland,Catherine Hicks,United Artists,87.0
+492616,R,Drama,2019,Julius Onah,Naomi Watts,Dream Factory Group,109.0
+473019,R,Drama,2019,Joanna Hogg,Neil Young,BBC Films,120.0
+565310,PG,Comedy,2019,Lulu Wang,Shuzhen Zhao,Big Beach Films,100.0
+329996,PG,Adventure,2019,Tim Burton,Colin Farrell,Walt Disney Pictures,112.0
+449562,PG-13,Comedy,2019,Chris Addison,Anne Hathaway,Metro-Goldwyn-Mayer (MGM),93.0
+501989,R,Comedy,2019,Jason Winer,Martin Freeman,Mosaic,97.0
+479,R,Action,2000,John Singleton,Samuel L. Jackson,Paramount Pictures,99.0
+441384,R,Comedy,2019,Harmony Korine,Matthew McConaughey,Iconoclast,95.0
+487680,R,Action,2019,Andrea Berloff,Melissa McCarthy,BRON Studios,102.0
+537739,Not Rated,Comedy,2019,Elise Durán,Alexandra Daddario,BCDF Pictures,94.0
+513045,R,Action,2019,Michael Dowse,Dave Bautista,GoldDay,93.0
+522924,PG,Comedy,2019,Simon Curtis,Kevin Costner,Fox 2000 Pictures,109.0
+534259,PG-13,Comedy,2019,Gurinder Chadha,Billy Barratt,New Line Cinema,118.0
+405177,PG-13,Comedy,2019,Richard Linklater,Cate Blanchett,Annapurna Pictures,109.0
+449924,Not Rated,Action,2019,Wilson Yip,Donnie Yen,Golden Harvest Company,107.0
+431580,PG,Animation,2019,Jill Culton,Chloe Bennet,DreamWorks Animation,97.0
+433502,R,Drama,2019,James Kent,Keira Knightley,Amusement Park Films,108.0
+449563,PG-13,Comedy,2019,Todd Strauss-Schulson,Rebel Wilson,BRON Studios,89.0
+492449,R,Action,2019,Malik Bader,Liam Hemsworth,Solution Entertainment Group,112.0
+522518,PG,Adventure,2019,Gail Mancuso,Josh Gad,Dreamworks Pictures,109.0
+539651,R,Drama,2019,Jacob Estes,David Oyelowo,Blumhouse Productions,103.0
+454458,PG,Animation,2019,Kelly Asbury,Kelly Clarkson,STX Entertainment,87.0
+468224,PG-13,Biography,2019,Dome Karukoski,Nicholas Hoult,Fox Searchlight Pictures,112.0
+484437,R,Drama,2019,Lee Cronin,Seána Kerslake,Savage Productions,90.0
+529862,R,Comedy,2019,Paul Downs Colaizzo,Jillian Bell,Material Pictures,104.0
+596650,Not Rated,Comedy,2019,Nitesh Tiwari,Sushant Singh Rajput,Fox STAR Studios,143.0
+3549,R,Drama,2006,Susanne Bier,Mads Mikkelsen,Zentropa Entertainments,120.0
+500852,PG-13,Action,2019,Catherine Hardwicke,Gina Rodriguez,Canana Films,104.0
+508763,PG,Adventure,2019,Charles Martin Smith,Ashley Judd,Bona Film Group,96.0
+534075,Not Rated,Biography,2019,Vikas Bahl,Hrithik Roshan,Film Poland Productions,154.0
+400157,PG,Animation,2019,Dylan Brown,Sofia Mali,Paramount Animation,85.0
+581528,Not Rated,Action,2019,Won-Tae Lee,Ma Dong-seok,Ace Maker Movie Works,109.0
+509853,R,Crime,2019,Fred Durst,John Travolta,Daniel Grodnik Productions,88.0
+500860,R,Drama,2019,Laure de Clermont-Tonnerre,Matthias Schoenaerts,Canal+,96.0
+449985,R,Action,2019,Jesse V. Johnson,Tony Jaa,Aurora Alliance Films,96.0
+535167,TV-MA,Action,2019,Frant Gwo,Jing Wu,Beijing Dengfeng International Culture Communications Company,125.0
+454294,PG,Action,2019,Joe Cornish,Louis Ashbourne Serkis,Big Talk Productions,120.0
+593911,Not Rated,Drama,2019,Waymon Boone,Caylee Cowan,Nasser Group,85.0
+458253,PG,Animation,2019,Chris Butler,Hugh Jackman,Annapurna Pictures,93.0
+514439,PG,Biography,2019,Roxann Dawson,Marcel Ruiz,Fox 2000 Pictures,116.0
+574241,PG-13,Comedy,2019,Zara Hayes,Diane Keaton,Entertainment One,90.0
+331482,PG-13,Comedy,2019,Tina Gordon,Regina Hall,Universal Pictures,109.0
+532671,R,Fantasy,2019,Nicholas McCarthy,Taylor Schilling,Orion Pictures,92.0
+615453,Not Rated,Animation,2019,Yu Yang,Yanting Lü,Coco Cartoon,110.0
+505953,PG,Drama,2019,Shawn Seet,Finn Little,Ambience Entertainment,99.0
+582153,Not Rated,Drama,2019,Zoya Akhtar,Vijay Varma,Excel Entertainment,154.0
+567733,R,Crime,2019,John Stalberg Jr.,Beau Knapp,Yale Productions,105.0
+527776,PG,Drama,2019,Alex Kendrick,Alex Kendrick,Affirm Films,119.0
+464504,PG-13,Comedy,2019,Tyler Perry,Tyler Perry,The Tyler Perry Company,109.0
+591774,Not Rated,Crime,2019,John Swab,Ron Perlman,Roxwell Films,93.0
+567646,Not Rated,Action,2019,Byeong-heon Lee,Lee Dong-yong,About Film,111.0
+565391,PG-13,Drama,2019,Noble Jones,John Lithgow,Symbolic Exchange,94.0
+508791,PG-13,Drama,2019,Ry Russo-Young,Yara Shahidi,Alloy Entertainment,100.0
+581998,PG,Comedy,2019,J.J. Englert,Peta Murgatroyd,Ellinas Multimedia,106.0
+556271,Not Rated,Drama,2019,Abhishek Varman,Varun Dhawan,Dharma Productions,166.0
+535144,Not Rated,Action,2019,Abhishek Chaubey,Sushant Singh Rajput,MacGuffin Pictures,143.0
+611594,Not Rated,Drama,2019,Jagan Shakti,Akshay Kumar,Cape of Good Films,130.0
+616584,Not Rated,Fantasy,2019,Melanie Martinez,Melanie Martinez,Atlantic Records,96.0
+550485,Not Rated,Action,2019,Nikkhil Advani,Mrunal Thakur,Bake My Cake Films,146.0
+454292,Not Rated,Action,2019,Sujeeth,Prabhas,UV Creations,170.0
+517434,Not Rated,Action,2019,Sang-Geun Lee,Jo Jung-Suk,Filmmaker R&K,103.0
+574163,R,Drama,2019,Van Ling,Tania Raymonde,The National Hellenic Society,137.0
+486832,R,Drama,2019,Britt Poulton,Walton Goggins,Amasia Entertainment,98.0
+576071,R,Biography,2019,Chuck Konzelman,Ashley Bratcher,Unplanned Movie,109.0
+503129,Not Rated,Action,2019,Punit Malhotra,Tiger Shroff,Fox STAR Studios,146.0
+571627,Not Rated,Action,2019,Joo-hwan Kim,Seo Jun Park,KeyEast,129.0
+585062,Not Rated,Comedy,2019,Laxman Utekar,Kartik Aaryan,Maddock Films,126.0
+590401,Not Rated,Comedy,2019,Akiv Ali,Ajay Devgn,Luv Films,135.0
+603055,PG-13,Sport,2019,Alex Ranarivelo,Michael Roark,ESX Entertainment,94.0
+553837,Not Rated,Animation,2019,Gorô Taniguchi,Jun Fukuyama,Sunrise,112.0
+565326,Not Rated,Comedy,2019,Hannah Pearl Utt,Hannah Pearl Utt,Ball & Chain Productions,98.0
+595172,PG,Animation,2019,Robert Fernandez,David Thorpe,Cat In The Mill Studio,108.0
+564898,Not Rated,Drama,2019,Eddie Mensore,Terry Serpico,Emphatic Films,83.0
+585862,Not Rated,Action,2019,Robbie Grewal,John Abraham,Kyta Productions,141.0
+622654,TV-14,Action,2019,Le-Van Kiet,Veronica Ngo,Premiere Picture,98.0
+411971,PG-13,Drama,2019,Ritesh Batra,Nawazuddin Siddiqui,Poetic License Production,110.0
+555295,R,Horror,2019,Roxanne Benjamin,Karina Fontes,Protostar Pictures,87.0
+898044,PG-13,Action,2019,Tony Chan,Xiaoming Huang,Bona Film Group,118.0
+569594,Not Rated,Action,2019,Ali Abbas Zafar,Salman Khan,AVA Films & Entertainment,150.0
+594345,Not Rated,Musical,2019,Mark Bramble,Bonnie Langford,Julian Marsh Pictures,155.0
+552681,R,Action,2019,Tony Wash,Sid Haig,Hicktown Entertainment,85.0
+511778,R,Comedy,2019,Drew Cullingham,Spencer Brown,7DM Studios,82.0
+616464,PG,Comedy,2019,T.C. Christensen,David McConnell,Remember Films,100.0
+560964,Not Rated,Action,2019,Chuck Russell,Vidyut Jammwal,Junglee Pictures,115.0
+576121,Not Rated,Action,2019,Indra Kumar,Ajay Devgn,Ajay Devgn Ffilms,130.0
+554596,R,Comedy,2019,Nacho G. Velilla,Martha Higareda,Neverending Media,102.0
+589157,Not Rated,Action,2019,Jazz Boon,Louis Koo,Babieka,98.0
+568789,Not Rated,Drama,2019,Marie Kreutzer,Valerie Pachner,Novotny & Novotny Filmproduktion GmbH,108.0
+572367,PG-13,Drama,2019,Aneesh Daniel,Sharman Joshi,Skypass Entertainment,112.0
+553839,Not Rated,Animation,2019,Yutaka Uemura,Tesshô Genda,Studio NuT,115.0
+554590,PG-13,Comedy,2019,Ariel Winograd,Martha Higareda,Neverending Media,120.0
+555748,PG-13,Adventure,2019,Mitch Davis,Christopher Gorham,Kolipoki Pictures,117.0
+599598,Not Rated,Action,2019,Raj Kumar Gupta,Arjun Kapoor,Fox STAR Studios,123.0
+602661,Not Rated,Action,2019,Jason Kwan,Tony Ka Fai Leung,Bona Film Group,101.0
+636919,R,Action,2019,Jeffrey Nicholson,Michael Saquella,Cactus Blue Entertainment,93.0
+577922,PG-13,Action,2020,Christopher Nolan,John David Washington,Warner Bros.,150.0
+464052,PG-13,Action,2020,Patty Jenkins,Gal Gadot,Atlas Entertainment,151.0
+495764,R,Action,2020,Cathy Yan,Margot Robbie,Clubhouse Pictures (II),109.0
+570670,R,Drama,2020,Leigh Whannell,Elisabeth Moss,Universal Pictures,124.0
+508439,PG,Animation,2020,Dan Scanlon,Tom Holland,Walt Disney Pictures,102.0
+38700,R,Action,2020,Adil El Arbi,Will Smith,Columbia Pictures,124.0
+454626,PG,Action,2020,Jeff Fowler,Ben Schwartz,Paramount Pictures,99.0
+448119,PG,Adventure,2020,Stephen Gaghan,Robert Downey Jr.,Universal Pictures,101.0
+481848,PG,Adventure,2020,Chris Sanders,Harrison Ford,20th Century Studios,100.0
+508935,Not Rated,Action,2020,Hu Guan,Zhi-zhong Huang,Beijing Diqi Yinxiang Entertainment,149.0
+598215,R,Crime,2020,Scott Teems,Shea Whigham,Prowess Pictures,98.0
+635389,TV-PG,Animation,2020,Teng Cheng,Guangtao Jiang,Beijing Enlight Pictures,110.0
+717676,PG-13,Comedy,2020,Scott Pryor,Scott Pryor,Pryor Entertainment,120.0
+713650,R,Drama,2020,Marcus Brown,Dan Belcher,Notis Studio,78.0
+550678,Not Rated,Horror,2020,Kevin Shulman,Kristina Klebe,Roxwell Films,87.0
+784384,R,Drama,2020,Justin Kreinbrink,Nicky Whelan,Dow Jazz Films,121.0
