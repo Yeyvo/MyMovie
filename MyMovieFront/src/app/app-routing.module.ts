@@ -7,6 +7,7 @@ import {ProfileComponent} from "./component/profile/profile.component";
 import {FourOhFourComponent} from "./component/four-oh-four/four-oh-four.component";
 import {RecommendationComponent} from "./component/recommendation/recommendation.component";
 import {AuthGuard} from "@angular/fire/auth-guard";
+import {AuthGuardService} from "./services/auth-guard.service";
 
 const routes: Routes = [{
   path: '',
@@ -48,7 +49,7 @@ const routes: Routes = [{
     path: 'auth/signin', component: SigninComponent
   },
   {
-    path: 'auth/profile', component: ProfileComponent ,  canActivate: [AuthGuard]
+    path: 'auth/profile', component: ProfileComponent ,  canActivate: [AuthGuardService]
   },
   {
     path: 'not-found', component: FourOhFourComponent
