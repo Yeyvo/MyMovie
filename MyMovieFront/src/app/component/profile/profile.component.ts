@@ -41,10 +41,7 @@ export class ProfileComponent implements OnInit,OnDestroy {
   ngOnInit(): void {
     this.userSub = this.userAuth.user$.subscribe((data) => {
       this.user = data;
-      this.maxVisible = Math.round(data.recommendedMovies.length/5 + 1);
-      this.scrollvalue = this.maxVisible + 1
       let len = data.recommendedMovies.length;
-      console.log('recomended movies : ', data.recommendedMovies)
       if(len>0){
         let factor = 1
         switch (len) {
@@ -64,11 +61,11 @@ export class ProfileComponent implements OnInit,OnDestroy {
         }
         forkJoin(obs).subscribe((res)=>{
           this.recMovies = res;
-          this.hasRecommendations = true
+          this.hasRecommendations = true;
+          this.loader = false;
         })
-
+      } else{
         this.loader = false;
-        this.hasRecommendations = true;
       }
     });
   }

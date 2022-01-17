@@ -42,13 +42,13 @@ const routes: Routes = [{
     loadChildren: () => import('./component/person/person.module').then(mod => mod.PersonModule)
   },
   {
-    path: 'auth/signup', component: SignupComponent , // canActivate: [AuthGuard]
+    path: 'auth/signup', component: SignupComponent ,  canActivate: [AuthGuard]
   },
   {
     path: 'auth/signin', component: SigninComponent
   },
   {
-    path: 'auth/profile', component: ProfileComponent ,  //canActivate: [AuthGuard]
+    path: 'auth/profile', component: ProfileComponent ,  canActivate: [AuthGuard]
   },
   {
     path: 'not-found', component: FourOhFourComponent

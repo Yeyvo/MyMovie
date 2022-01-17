@@ -96,40 +96,15 @@ export class AuthService {
 
   private async updateUserData(user: any) {
     const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
-    const datafirstTime = {
+    //transformation to pure js
+    const data = {
       uid: user.uid,
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
-      recommendedMovies: []
+      recommendedMovies: Object.assign([], user.recommendedMovies)
     }
-
-    const dataGeneral = {
-      uid: user.uid,
-      email: user.email,
-      photoURL: user.photoURL,
-      recommendedMovies: user.recommendedMovies
-    }
-
-    // firebase.auth().fetchSignInMethodsForEmail(user.email)
-    //   .then(function(signInMethods) {
-    //     if (signInMethods.length === 0) {
-    //
-    //     } else{
-    //
-    //     }
-    //   })
-    const doc = await this.docExists(`users/${user.uid}`);
-
-    if (doc) {
-      userRef.set(dataGeneral, {merge: true});
-      // this.user = dataGeneral;
-    } else {
-      userRef.set(datafirstTime, {merge: true});
-
-    }
-
-    // return
+    userRef.set(data, {merge: true});
   }
 
   async signOut() {
@@ -172,14 +147,9 @@ export class AuthService {
         r.recommendedMovies.push(String(recommendation));
       }
       this.updateUserData(r).then(() => {
-        // console.log('successfuly added recomendation')
-        // console.log(r);
-
       }).catch((err) => {
         console.log(err)
       });
-      // console.log('trying to add recomendation')
-      // console.log(r);
       a.unsubscribe();
     });
     // this.updateData(r)

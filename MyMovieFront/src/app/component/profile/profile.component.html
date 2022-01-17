@@ -1,6 +1,6 @@
 <div class="profileContainer">
-  <app-skeleton *ngIf="loader" ></app-skeleton>
-  <div class="container-fluid mainProfile" *ngIf="user !==  undefined">
+  <app-skeleton *ngIf="loader"></app-skeleton>
+  <div class="container-fluid mainProfile" *ngIf="!loader && user !==  undefined">
     <img [src]="user.photoURL" class="rounded-circle">
     <div class="parent">
       <p class="div1">Username: </p>
@@ -16,12 +16,9 @@
       <div class="listing__head">
         <h2 class="listing__title centerText">Recommended Movies</h2>
       </div>
-            <app-skeleton *ngIf="loader" ></app-skeleton>
-
-
 
       <p-carousel [value]="recMovies" [numVisible]="6" [numScroll]="4" [circular]="true"
-                  [responsiveOptions]="responsiveOptions"  class="recom">
+                  [responsiveOptions]="responsiveOptions" class="recom">
         <ng-template let-movie pTemplate="item">
           <div class="listing-item-style" [routerLink]="['/movies/', movie.id]">
             <div class="overlay">

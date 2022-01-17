@@ -17,7 +17,7 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {AngularFireModule} from "@angular/fire/compat";
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 import {AngularFireAuthModule} from "@angular/fire/compat/auth";
-import {initializeApp, provideFirebaseApp} from '@angular/fire/app';
+import {getApp, initializeApp, provideFirebaseApp} from '@angular/fire/app';
 import {environment} from '../environments/environment';
 import {provideAnalytics, getAnalytics, ScreenTrackingService, UserTrackingService} from '@angular/fire/analytics';
 import {provideAuth, getAuth} from '@angular/fire/auth';
@@ -49,6 +49,7 @@ import {PersonModule} from "./component/person/person.module";
 import {WindowRefService} from "./services/windowRef.service";
 import {ButtonModule} from "primeng/button";
 import { RecommendationComponent } from './component/recommendation/recommendation.component';
+import {AuthGuardService} from "./services/auth-guard.service";
 
 // const appRoutes: Routes = [
 //   {path: 'auth/signup', component: SignupComponent},
@@ -59,17 +60,7 @@ import { RecommendationComponent } from './component/recommendation/recommendati
 //   {path: '**', redirectTo: 'not-found'},
 // ];
 
-const firebaseConfig = {
-  apiKey: "AIzaSyB_EBZG7QVI6TXcufOGA7l23VbM-Y9sNIs",
-  authDomain: "my-movie-pi.firebaseapp.com",
-  projectId: "my-movie-pi",
-  storageBucket: "my-movie-pi.appspot.com",
-  messagingSenderId: "690751329830",
-  appId: "1:690751329830:web:e42cdf9ba5f6096028b8e7",
-  measurementId: "G-69M7TMBY6P",
-  databaseURL: "https://my-movie-pi-default-rtdb.europe-west1.firebasedatabase.app/"
 
-};
 
 @NgModule({
   declarations: [
@@ -108,10 +99,10 @@ const firebaseConfig = {
         ReactiveFormsModule,
         // RouterModule.forRoot(appRoutes),
         FontAwesomeModule,
-        AngularFireModule.initializeApp(firebaseConfig),
+        AngularFireModule.initializeApp(environment.firebase),
         AngularFirestoreModule,
         AngularFireAuthModule,
-        provideFirebaseApp(() => initializeApp(environment.firebase)),
+        provideFirebaseApp(() => getApp()),
         // provideAnalytics(() => getAnalytics()),
         provideAuth(() => getAuth()),
         ButtonModule,
@@ -123,7 +114,7 @@ const firebaseConfig = {
         // provideRemoteConfig(() => getRemoteConfig()),
         // provideStorage(() => getStorage()),
     ],
-  providers: [AuthService, MoviesService, ScreenTrackingService, UserTrackingService,WindowRefService],
+  providers: [AuthService, MoviesService, AuthGuardService, ScreenTrackingService, UserTrackingService,WindowRefService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
