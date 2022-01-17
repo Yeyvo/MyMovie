@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../../../services/auth.service";
 import {Router} from "@angular/router";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+import {TooltipPosition} from "@angular/material/tooltip";
 
 @Component({
   selector: 'app-signin',
@@ -25,7 +26,7 @@ export class SigninComponent implements OnInit {
   initForm() {
     this. signInForm = this.formBuilder.group({
       email: ['',[ Validators.required, Validators.email] ],
-      password: ['',[ Validators.required, Validators.pattern(/[0-9a-zA-Z]{6,}/)]]
+      password: ['',[ Validators.required]]
     });
   }
 
@@ -43,9 +44,21 @@ export class SigninComponent implements OnInit {
   }
 
   resetPassWordEmail() {
-    const email = this.signInForm.get('email').value;
-    if(email !== ""){
-      this.auth.sendResetEmail(email);
+    const email = this.signInForm.get('email');
+    if(email.value !== "" && email.status === "VALID"){
+      this.errorMessage = " An Email has been sent to the specified Email address"
+      this.auth.sendResetEmail(email.value);
+    }
+    if(email.status !== "VALID") {
+      this.checkValidityForError(false);
+    }
+
+  }
+  checkValidityForError(invalid: boolean) {
+    if (invalid) {
+      this.errorMessage = "Invalid Form check all Inputs"
+    } else{
+      this.errorMessage = ""
     }
   }
 }

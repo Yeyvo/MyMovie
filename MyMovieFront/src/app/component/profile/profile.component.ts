@@ -41,7 +41,7 @@ export class ProfileComponent implements OnInit,OnDestroy {
   ngOnInit(): void {
     this.userSub = this.userAuth.user$.subscribe((data) => {
       this.user = data;
-      let len = data.recommendedMovies.length;
+      let len = data.recommendedMovies?.length ;
       if(len>0){
         let factor = 1
         switch (len) {

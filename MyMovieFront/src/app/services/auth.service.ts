@@ -60,7 +60,7 @@ export class AuthService {
               displayName: username,
               photoURL: userCredential.user.photoURL == null ? this.defaultImageUrl : userCredential.user.photoURL
             }
-            this.updateUserData(userData)
+            this.updateUserData(userData, true)
             resolve(userCredential);
           }
         ).catch((err) => {
@@ -76,7 +76,7 @@ export class AuthService {
     const credential = await this.afAuth.signInWithPopup(provider);
     // firebase.auth.fetchProvidersForEmail("emailaddress@gmail.com");
     this.router.navigate(['/']);
-    return this.updateUserData(credential.user);
+    return this.updateUserData(credential.user, true);
 
   }
 
@@ -94,15 +94,26 @@ export class AuthService {
     return this.afs.doc(path).valueChanges().pipe(first()).toPromise()
   }
 
-  private async updateUserData(user: any) {
+  private async updateUserData(user: any, forConnection :boolean) {
     const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
     //transformation to pure js
+
+
     const data = {
       uid: user.uid,
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
-      recommendedMovies: Object.assign([], user.recommendedMovies)
+
+    }
+
+    const doc = await this.docExists(`users/${user.uid}`);
+    if(!doc){
+      data['recommendedMovies'] = []
+    }
+
+    if(!forConnection){
+      data['recommendedMovies'] = Object.assign([], user.recommendedMovies);
     }
     userRef.set(data, {merge: true});
   }
@@ -146,7 +157,7 @@ export class AuthService {
       if (r.recommendedMovies.indexOf(String(recommendation)) === -1) {
         r.recommendedMovies.push(String(recommendation));
       }
-      this.updateUserData(r).then(() => {
+      this.updateUserData(r, false).then(() => {
       }).catch((err) => {
         console.log(err)
       });

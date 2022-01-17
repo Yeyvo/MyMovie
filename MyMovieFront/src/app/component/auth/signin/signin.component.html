@@ -5,17 +5,17 @@
     <form [formGroup]="signInForm" (ngSubmit)="onConnect()">
       <div class="form-group">
         <label for="email">Email : </label>
-        <input type="email" id="email" class="form-control" formControlName="email">
+        <input type="email" id="email" class="form-control" formControlName="email" (change)="checkValidityForError(signInForm.invalid)">
       </div>
       <div class="form-group">
         <label for="password">Password :</label>
-        <input type="password" id="password" class="form-control" formControlName="password">
+        <input type="password" id="password" class="form-control" formControlName="password" (change)="checkValidityForError(signInForm.invalid)">
       </div>
       <div>
         <span (click)="resetPassWordEmail()" class="passReset" >Mot de passe oublier ?</span>
       </div>
       <p class="text-danger">{{errorMessage}}</p>
-        <button class="btn" type="submit" [disabled]="signInForm.invalid">Connect</button>
+        <button class="btn" type="submit"  [disabled]="signInForm.invalid">Connect</button>
     </form>
     <div class="connectUsingAll">
       <p>Connect using</p>
