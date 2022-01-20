@@ -103,8 +103,8 @@ def UpdateDataSet():
             for data in resp_dict["results"]:
                 movie_id_arr.append(data["id"])
                 movie_title_arr.append(data["title"])
-                wget.download(basePosterURL + data.get('poster_path') , out=imgFolderCacheName + '/' +str(data["id"])+ ".png" )
-                genre = list(map(genreIdToStr, data['genre_ids']))
+                # wget.download(basePosterURL + data.get('poster_path') , out=imgFolderCacheName + '/' +str(data["id"])+ ".png" )
+                genre = [list(map(genreIdToStr, data['genre_ids']))[0]]
                 if "Action" in genre:
                     Action.append(1)
                 else:
@@ -341,4 +341,9 @@ def getStatistics(): #to run on localMachine
 
 # getStatistics()
 
-UpdateDataSet()
+# UpdateDataSet()
+
+
+movie = pd.read_csv('train.csv')
+for col in movie.columns:
+    print(movie[col].value_counts())
