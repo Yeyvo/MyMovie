@@ -8,6 +8,225 @@ import os
 
 imgFolderCacheName = "PosterCache"
 
+def genreIdToStr( id):
+    if(id == 28):
+        return 'Action'
+    elif(id == 12):
+        return 'Adventure'
+    elif(id == 16):
+        return 'Animation'
+    elif(id == 35):
+        return 'Comedy'
+    elif(id == 80):
+        return 'Crime'
+    elif(id == 99):
+        return 'Documentary'
+    elif(id == 18):
+        return 'Drama'
+    elif(id == 10751):
+        return 'Family'
+    elif(id == 14):
+        return 'Fantasy'
+    elif(id == 36):
+        return 'History'
+    elif(id == 27):
+        return 'Horror'
+    elif(id == 10402):
+        return 'Music'
+    elif(id == 9648):
+        return 'Mystery'
+    elif(id == 10749):
+        return 'Romance'
+    elif(id == 878):
+        return 'Science Fiction'
+    elif(id == 10770):
+        return 'TV Movie'
+    elif(id == 53):
+        return 'Thriller'
+    elif(id == 10752):
+        return 'War'
+    elif(id == 37):
+        return 'Western'
+    else:
+        return 'N/A'
+
+def UpdateDataSet():
+    movie_id_arr = []
+    movie_title_arr = []
+    Action = []
+    Adventure = []
+    Animation = []
+    Biography = []
+    Comedy = []
+    Crime = []
+    Documentary = []
+    Drama = []
+    Family = []
+    Fantasy = []
+    History = []
+    Horror = []
+    Music = []
+    Musical = []
+    Mystery = []
+    NA = []
+    News = []
+    RealityTV = []
+    Romance = []
+    SciFi = []
+    Short = []
+    Sport = []
+    Thriller = []
+    War = []
+    Western = []
+
+    baseUrl = "https://api.themoviedb.org/3/movie/top_rated?api_key=38822594572ba49838eb67eec9246d29&page="
+    region = "&language=en-US&region=US"
+    for page in tqdm(range(1,479)):
+        url = baseUrl + str(page) + region
+        response = urllib.request.urlopen(url)
+        status_code = response.getcode()
+        if (status_code == 404):
+            print("Error opening page ", page)
+        elif (status_code == 200):
+            response = response.read()
+            resp_dict = json.loads(response.decode('utf-8'))
+            for data in resp_dict["results"]:
+                movie_id_arr.append(data["id"])
+                movie_title_arr.append(data["title"])
+                genre = list(map(genreIdToStr, data['genre_ids']))
+                if "Action" in genre:
+                    Action.append(1)
+                else:
+                    Action.append(0)
+                if "Adventure" in genre:
+                    Adventure.append(1)
+                else:
+                    Adventure.append(0)
+                if "Animation" in genre:
+                    Animation.append(1)
+                else:
+                    Animation.append(0)
+                if "Biography" in genre:
+                    Biography.append(1)
+                else:
+                    Biography.append(0)
+                if "Comedy" in genre:
+                    Comedy.append(1)
+                else:
+                    Comedy.append(0)
+                if "Crime" in genre:
+                    Crime.append(1)
+                else:
+                    Crime.append(0)
+                if "Documentary" in genre:
+                    Documentary.append(1)
+                else:
+                    Documentary.append(0)
+                if "Drama" in genre:
+                    Drama.append(1)
+                else:
+                    Drama.append(0)
+                if "Family" in genre:
+                    Family.append(1)
+                else:
+                    Family.append(0)
+                if "Fantasy" in genre:
+                    Fantasy.append(1)
+                else:
+                    Fantasy.append(0)
+                if "History" in genre:
+                    History.append(1)
+                else:
+                    History.append(0)
+                if "Horror" in genre:
+                    Horror.append(1)
+                else:
+                    Horror.append(0)
+                if "Music" in genre:
+                    Music.append(1)
+                else:
+                    Music.append(0)
+                if "Musical" in genre:
+                    Musical.append(1)
+                else:
+                    Musical.append(0)
+                if "Mystery" in genre:
+                    Mystery.append(1)
+                else:
+                    Mystery.append(0)
+                if "N/A" in genre:
+                    NA.append(1)
+                else:
+                    NA.append(0)
+                if "News" in genre:
+                    News.append(1)
+                else:
+                    News.append(0)
+                if "Reality-TV" in genre:
+                    RealityTV.append(1)
+                else:
+                    RealityTV.append(0)
+                if "Romance" in genre:
+                    Romance.append(1)
+                else:
+                    Romance.append(0)
+                if "Sci-Fi" in genre:
+                    SciFi.append(1)
+                else:
+                    SciFi.append(0)
+                if "Short" in genre:
+                    Short.append(1)
+                else:
+                    Short.append(0)
+                if "Sport" in genre:
+                    Sport.append(1)
+                else:
+                    Sport.append(0)
+                if "Thriller" in genre:
+                    Thriller.append(1)
+                else:
+                    Thriller.append(0)
+                if "War" in genre:
+                    War.append(1)
+                else:
+                    War.append(0)
+                if "Western" in genre:
+                    Western.append(1)
+                else:
+                    Western.append(0)
+    movieDf = pd.DataFrame({
+        "MoviesId": movie_id_arr,
+        "Title": movie_title_arr,
+        "Action": Action,
+        "Adventure": Adventure,
+        "Animation": Animation,
+        "Biography": Biography,
+        "Comedy": Comedy,
+        "Crime": Crime,
+        "Documentary": Documentary,
+        "Drama": Drama,
+        "Family": Family,
+        "Fantasy": Fantasy,
+        "History": History,
+        "Horror": Horror,
+        "Music": Music,
+        "Musical": Musical,
+        "Mystery": Mystery,
+        "N/A": NA,
+        "News": News,
+        "Reality-TV": RealityTV,
+        "Romance": Romance,
+        "Sci-Fi": SciFi,
+        "Short": Short,
+        "Sport": Sport,
+        "Thriller": Thriller,
+        "War": War,
+        "Western": Western,
+    })
+    print('--------- Download Complete CSV Formed --------')
+
+    movieDf.to_csv('train.csv', index=False)
+
 def UpdateDataImages():
     if not os.path.exists(imgFolderCacheName):
         os.makedirs(imgFolderCacheName)
@@ -102,3 +321,4 @@ def getStatistics(): #to run on localMachine
 
 # getStatistics()
 
+UpdateDataSet()
