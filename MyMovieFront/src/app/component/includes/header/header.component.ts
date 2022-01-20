@@ -126,7 +126,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   searchMovies() {
     if (this.searchStr !== undefined /*|| this.searchStr !== ''*/) {
       this.movieService.searchMovies(this.searchStr, 1);
-      this.searchStr = '';
+      this.searchStr = undefined;
       this.router.navigate(['/movies']);
     } else {
       this.getMoviesBtnClick();

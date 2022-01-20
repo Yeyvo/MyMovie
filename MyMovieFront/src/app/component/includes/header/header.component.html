@@ -52,7 +52,8 @@
     'active':formActive
     }">
     <input type="search" class="search-data" placeholder="Search" required [(ngModel)]="searchStr"
-           name="searchStr" (keyup.enter)="searchMovies()">
+           name="searchStr" >
+<!--    (keyup.enter)="searchMovies()"-->
     <button type="submit" (click)="searchMovies()">
       <fa-icon [icon]="faSearch"></fa-icon>
     </button>
