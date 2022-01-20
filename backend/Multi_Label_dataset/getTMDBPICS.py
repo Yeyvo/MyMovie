@@ -79,6 +79,16 @@ def UpdateDataSet():
     War = []
     Western = []
 
+
+    imgFolderCacheName = "PosterCache"
+    if not os.path.exists(imgFolderCacheName):
+        os.makedirs(imgFolderCacheName)
+
+    imgFolderCacheName = os.getcwd()+"\\" + imgFolderCacheName
+    # imgFolderCacheName = imgFolderCacheName.replace("\\", "/")
+    basePosterURL = "https://image.tmdb.org/t/p/w370_and_h556_bestv2"
+    ApiKey = "38822594572ba49838eb67eec9246d29"
+
     baseUrl = "https://api.themoviedb.org/3/movie/top_rated?api_key=38822594572ba49838eb67eec9246d29&page="
     region = "&language=en-US&region=US"
     for page in tqdm(range(1,479)):
@@ -93,6 +103,7 @@ def UpdateDataSet():
             for data in resp_dict["results"]:
                 movie_id_arr.append(data["id"])
                 movie_title_arr.append(data["title"])
+                wget.download(basePosterURL + data.get('poster_path') , out=imgFolderCacheName + '/' +str(data["id"])+ ".png" )
                 genre = list(map(genreIdToStr, data['genre_ids']))
                 if "Action" in genre:
                     Action.append(1)
@@ -229,22 +240,21 @@ def UpdateDataSet():
 
     print('--------- Download Images ----------------')
 
-    UpdateDataImages()
-
-    print('--------- Download Images Complete ----------------')
 
     # getStatistics()
 
 
 
 def UpdateDataImages():
-    imgFolderCacheName = "PosterCache"
-    if not os.path.exists(imgFolderCacheName):
-        os.makedirs(imgFolderCacheName)
+
 
     df = pd.read_csv("train.csv")
 
     moviesId = df.MoviesId.to_list()
+    imgFolderCacheName = "PosterCache"
+    if not os.path.exists(imgFolderCacheName):
+        os.makedirs(imgFolderCacheName)
+
     imgFolderCacheName = os.getcwd()+"\\" + imgFolderCacheName
     # imgFolderCacheName = imgFolderCacheName.replace("\\", "/")
     basePosterURL = "https://image.tmdb.org/t/p/w370_and_h556_bestv2"
@@ -252,23 +262,24 @@ def UpdateDataImages():
     NoPosters = []
 
     for i in tqdm(range(len(moviesId))):
-        if(not os.path.exists(imgFolderCacheName + '/' +moviesId[i]+ ".png")) : 
-            poster_url = "https://api.themoviedb.org/3/find/"+moviesId[i]+"?api_key="+ApiKey+"&external_source=imdb_id"
+        if(not os.path.exists(imgFolderCacheName + '/' +str(moviesId[i])+ ".png")) : 
+            poster_url = "https://api.themoviedb.org/3/find/"+str(moviesId[i])+"?api_key="+ApiKey+"&external_source=imdb_id"
             urlFile = urllib.request.urlopen(poster_url).read()
             # print(URLFILE)
             resp_dict = json.loads(urlFile)
             if(len(resp_dict["movie_results"])>0):
                 linkdata = resp_dict.get("movie_results")[0].get('poster_path')
                 if(linkdata is None):
-                    print("\n Movie Poster not Found (None) : " + moviesId[i])
+                    print("\n Movie Poster not Found (None) : " + str(moviesId[i]))
                     NoPosters.append(moviesId[i])
                     df.drop(index=i, axis=0, inplace=True)
                 else :
-                    poster_filename = wget.download(basePosterURL + linkdata , out=imgFolderCacheName + '/' +moviesId[i]+ ".png" )
+                    poster_filename = wget.download(basePosterURL + linkdata , out=imgFolderCacheName + '/' +str(moviesId[i])+ ".png" )
+                    
                 # os.rename(poster_filename, imgFolderCacheName +'/' + moviesId[i]+ '.png')
                 # print(poster_filename)
             else:
-                print("\n Movie not found : " + moviesId[i])
+                print("\n Movie not found : " + str(moviesId[i]))
                 NoPosters.append(moviesId[i])
                 df.drop(index=i, axis=0, inplace=True)
             # elif(len(resp_dict["movie_results"])>0):
@@ -331,4 +342,3 @@ def getStatistics(): #to run on localMachine
 # getStatistics()
 
 UpdateDataSet()
-
