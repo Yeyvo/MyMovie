@@ -56,9 +56,11 @@ export class RecommendationComponent implements OnInit {
 
   found(){
     if(this.recommendationTree.recommendation !== undefined){
+      this.loader = true;
       this.movies.getMovie(this.recommendationTree.recommendation).subscribe((res)=>{
         this.recomendMovies = res;
         this.isResult = true;
+        this.loader = false;
       })
       if(this.auth.isAuth){
         // console.log('saving reco')
