@@ -123,7 +123,7 @@
             </div>
           </div>
 
-          <div class="listing-space">
+          <div class="listing-space"  *ngIf="casts.length>0">
             <div class="listing__head">
               <h2 class="listing__title">Cast</h2>
             </div>
@@ -191,12 +191,12 @@
       </mat-tab-group>
 
 
-      <div class="listing-space mt-20 mb-5">
+      <div class="listing-space mt-20 mb-5" *ngIf="recomendMovies.length>0">
         <div class="listing__head">
           <h2 class="listing__title">Recommended Movies</h2>
         </div>
         <p-carousel [value]="recomendMovies" [numVisible]="6" [numScroll]="4" [circular]="false"
-                    [responsiveOptions]="responsiveOptions">
+                    [responsiveOptions]="responsiveOptions" >
           <ng-template let-recomend pTemplate="item">
             <div class="listing-item-style" [routerLink]="['/movies/', recomend.id]">
               <div class="overlay">
