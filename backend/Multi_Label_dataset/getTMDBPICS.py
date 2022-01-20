@@ -6,7 +6,7 @@ import os
 
 #https://api.themoviedb.org/3/find/tt0458290?api_key=38822594572ba49838eb67eec9246d29&external_source=imdb_id
 
-imgFolderCacheName = "PosterCache"
+
 
 def genreIdToStr( id):
     if(id == 28):
@@ -227,16 +227,25 @@ def UpdateDataSet():
 
     movieDf.to_csv('train.csv', index=False)
 
+    print('--------- Download Images ----------------')
+
+    UpdateDataImages()
+
+    print('--------- Download Images Complete ----------------')
+
+    # getStatistics()
+
+
+
 def UpdateDataImages():
+    imgFolderCacheName = "PosterCache"
     if not os.path.exists(imgFolderCacheName):
         os.makedirs(imgFolderCacheName)
 
-
-
     df = pd.read_csv("train.csv")
 
-    moviesId = df.Id.to_list()
-    imgFolderCacheName = os.getcwd()+"\\PosterCache"
+    moviesId = df.MoviesId.to_list()
+    imgFolderCacheName = os.getcwd()+"\\" + imgFolderCacheName
     # imgFolderCacheName = imgFolderCacheName.replace("\\", "/")
     basePosterURL = "https://image.tmdb.org/t/p/w370_and_h556_bestv2"
     ApiKey = "38822594572ba49838eb67eec9246d29"
@@ -322,3 +331,4 @@ def getStatistics(): #to run on localMachine
 # getStatistics()
 
 UpdateDataSet()
+
