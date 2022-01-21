@@ -103,8 +103,9 @@ def UpdateDataSet():
             for data in resp_dict["results"]:
                 movie_id_arr.append(data["id"])
                 movie_title_arr.append(data["title"])
-                # wget.download(basePosterURL + data.get('poster_path') , out=imgFolderCacheName + '/' +str(data["id"])+ ".png" )
-                genre = [list(map(genreIdToStr, data['genre_ids']))[0]]
+                wget.download(basePosterURL + data.get('poster_path') , out=imgFolderCacheName + '/' +str(data["id"])+ ".png" )
+                genre = list(map(genreIdToStr, data['genre_ids']))
+                GenreList = genre
                 if "Action" in genre:
                     Action.append(1)
                 else:
@@ -208,6 +209,7 @@ def UpdateDataSet():
     movieDf = pd.DataFrame({
         "MoviesId": movie_id_arr,
         "Title": movie_title_arr,
+        "GenreList": GenreList,
         "Action": Action,
         "Adventure": Adventure,
         "Animation": Animation,
@@ -241,7 +243,7 @@ def UpdateDataSet():
     print('--------- Download Images ----------------')
 
 
-    # getStatistics()
+    getStatistics()
 
 
 
@@ -316,7 +318,7 @@ def getStatistics(): #to run on localMachine
     pd.set_option('expand_frame_repr', False)
 
     movie = pd.read_csv('train.csv')
-    movie_list = [i.replace(']','').replace('[','').replace('\'','').replace(" ","").split(",") for i in movie["Genre"]]
+    movie_list = [i.replace(']','').replace('[','').replace('\'','').replace(" ","").split(",") for i in movie["GenreList"]]
     single_movie_list = [j for i in movie_list for j in i]
     #2、 Then we need to know how many different kinds of movies there are , Then de duplicate the whole list 
     fin_movie_list = np.unique(single_movie_list)
@@ -341,9 +343,4 @@ def getStatistics(): #to run on localMachine
 
 # getStatistics()
 
-# UpdateDataSet()
-
-
-movie = pd.read_csv('train.csv')
-for col in movie.columns:
-    print(movie[col].value_counts())
+UpdateDataSet()
